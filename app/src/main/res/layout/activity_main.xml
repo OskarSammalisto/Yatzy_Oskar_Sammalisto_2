@@ -5,18 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paper_background"
     tools:context=".MainActivity">
 
     <TableLayout
-        android:layout_width="247dp"
+        android:id="@+id/tableLayout"
+        android:layout_width="271dp"
         android:layout_height="572dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+
         android:layout_marginBottom="8dp"
-        android:background=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
@@ -24,20 +26,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.486">
 
+        <!--<view-->
+        <!--android:id="@+id/background"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:background="#F00"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/total"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/ones"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/ones"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/ones"-->
+
+
+        <!--/>-->
+
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
 
+
             >
 
             <TextView
+                android:id="@+id/ones"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="2"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Ones "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -51,7 +71,10 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -65,7 +88,10 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -79,7 +105,10 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 60"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -93,7 +122,10 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -114,13 +146,85 @@
             >
 
             <TextView
+                android:id="@+id/twos"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="2"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" Twos "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
                 android:gravity="center"
-                android:text=" Twos "
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -138,11 +242,14 @@
             >
 
             <TextView
+                android:id="@+id/threes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Threes "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -162,11 +269,14 @@
             >
 
             <TextView
+                android:id="@+id/fours"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Fours "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -186,11 +296,14 @@
             >
 
             <TextView
+                android:id="@+id/fives"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Fives "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -210,11 +323,14 @@
             >
 
             <TextView
+                android:id="@+id/sixes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Sixes "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -234,11 +350,14 @@
             >
 
             <TextView
+                android:id="@+id/sum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Sum "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -258,11 +377,14 @@
             >
 
             <TextView
+                android:id="@+id/bonus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Bonus "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -282,11 +404,14 @@
             >
 
             <TextView
+                android:id="@+id/pair"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Pair "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -306,13 +431,16 @@
             >
 
             <TextView
+                android:id="@+id/two_pairs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
-                android:text=" 2 Pair "
+                android:text=" 2 Pairs "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -330,11 +458,14 @@
             >
 
             <TextView
+                android:id="@+id/three_of_a_kind"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 3 of a Kind "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -354,11 +485,14 @@
             >
 
             <TextView
+                android:id="@+id/quads"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Quads "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -378,11 +512,14 @@
             >
 
             <TextView
+                android:id="@+id/small_straight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 1-5 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -402,11 +539,14 @@
             >
 
             <TextView
+                android:id="@+id/big_straight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" 2-6 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -426,11 +566,14 @@
             >
 
             <TextView
+                android:id="@+id/full_house"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Full House "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -450,11 +593,14 @@
             >
 
             <TextView
+                android:id="@+id/chance"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Chance "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -474,11 +620,14 @@
             >
 
             <TextView
+                android:id="@+id/yatzy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Yatzy "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -498,11 +647,14 @@
             >
 
             <TextView
+                android:id="@+id/total"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
                 android:gravity="center"
                 android:text=" Total "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -513,4 +665,77 @@
         </TableRow>
 
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@drawable/dice_one" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/dice_two" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/dice_three" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/dice_four" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="78dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/dice_five" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="91dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.39" />
+
 </android.support.constraint.ConstraintLayout>
