@@ -10,7 +10,7 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="271dp"
+        android:layout_width="221dp"
         android:layout_height="572dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -40,23 +40,23 @@
         <!--/>-->
 
         <TableRow
+            android:id="@+id/ones"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
 
-
             >
 
             <TextView
-                android:id="@+id/ones"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="2"
+                android:layout_weight="6"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" Ones "
@@ -73,7 +73,7 @@
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
@@ -90,7 +90,7 @@
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
@@ -100,7 +100,7 @@
 
                 />
 
-            <TextView
+            <!-- <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -132,12 +132,13 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
 
-                />
+                />-->
 
         </TableRow>
 
 
         <TableRow
+            android:id="@+id/twos"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -146,14 +147,14 @@
             >
 
             <TextView
-                android:id="@+id/twos"
+
                 android:layout_width="4dp"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="2"
+                android:layout_weight="6"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" Twos "
@@ -170,7 +171,7 @@
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
@@ -187,7 +188,7 @@
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:background="#fff"
                 android:gravity="center"
                 android:text=" 60 "
@@ -197,7 +198,7 @@
 
                 />
 
-            <TextView
+            <!-- <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -229,11 +230,12 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
 
-                />
+                />-->
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/threes"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -242,7 +244,6 @@
             >
 
             <TextView
-                android:id="@+id/threes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -251,6 +252,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Threes "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -258,9 +260,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/fours"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -269,7 +306,6 @@
             >
 
             <TextView
-                android:id="@+id/fours"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -278,6 +314,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Fours "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -285,9 +322,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/fives"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -296,7 +368,6 @@
             >
 
             <TextView
-                android:id="@+id/fives"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -305,6 +376,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Fives "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -312,9 +384,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/sixes"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -323,7 +430,6 @@
             >
 
             <TextView
-                android:id="@+id/sixes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -332,6 +438,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Sixes "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -339,9 +446,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/sum"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -350,7 +492,6 @@
             >
 
             <TextView
-                android:id="@+id/sum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -359,6 +500,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Sum "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -366,9 +508,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/bonus"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -377,7 +554,6 @@
             >
 
             <TextView
-                android:id="@+id/bonus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -386,6 +562,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Bonus "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -393,9 +570,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/pair"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -404,7 +616,6 @@
             >
 
             <TextView
-                android:id="@+id/pair"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -413,6 +624,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Pair "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -420,9 +632,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/two_pairs"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -431,7 +678,6 @@
             >
 
             <TextView
-                android:id="@+id/two_pairs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -440,6 +686,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" 2 Pairs "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -447,9 +694,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/three_of_a_kind"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -458,7 +740,6 @@
             >
 
             <TextView
-                android:id="@+id/three_of_a_kind"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -467,6 +748,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" 3 of a Kind "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -474,9 +756,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/quads"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -485,7 +802,6 @@
             >
 
             <TextView
-                android:id="@+id/quads"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -494,6 +810,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Quads "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -501,9 +818,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/small_straight"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -512,7 +864,6 @@
             >
 
             <TextView
-                android:id="@+id/small_straight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -521,6 +872,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" 1-5 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -528,9 +880,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/big_straight"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -539,7 +926,6 @@
             >
 
             <TextView
-                android:id="@+id/big_straight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -548,6 +934,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" 2-6 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -555,9 +942,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/full_house"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -566,7 +988,6 @@
             >
 
             <TextView
-                android:id="@+id/full_house"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -575,6 +996,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Full House "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -582,9 +1004,44 @@
 
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/chance"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -593,7 +1050,6 @@
             >
 
             <TextView
-                android:id="@+id/chance"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -602,6 +1058,7 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Chance "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
@@ -609,27 +1066,34 @@
 
                 />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-
-            >
-
             <TextView
-                android:id="@+id/yatzy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
+                android:layout_weight="5"
                 android:background="#fff"
                 android:gravity="center"
-                android:text=" Yatzy "
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -639,6 +1103,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/yatzy"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_margin="1dp"
@@ -647,7 +1112,6 @@
             >
 
             <TextView
-                android:id="@+id/total"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -656,8 +1120,105 @@
                 android:layout_marginBottom="1dp"
                 android:background="#fff"
                 android:gravity="center"
+                android:layout_weight="6"
+                android:text=" Yatzy "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/total"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:layout_weight="6"
                 android:text=" Total "
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="5"
+                android:background="#fff"
+                android:gravity="center"
+                android:text=" 60 "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18dp"
                 android:textStyle="bold"
 
                 />
