@@ -1,0 +1,39 @@
+package com.example.oskar.yatzy_oskar_sammalisto;
+
+public class Human_Player {
+
+    private String name;
+    private int score;
+    private int avatar;
+    private int[] scoreArray = new int[16];
+
+    Human_Player(String name, int avatar){
+        this.name = name;
+        this.avatar = avatar;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getAvatar() {
+        return avatar;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setAvatar(int avatar) {
+        this.avatar = avatar;
+    }
+}
