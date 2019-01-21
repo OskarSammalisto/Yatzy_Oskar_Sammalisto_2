@@ -5,7 +5,7 @@ public class Human_Player {
     private String name;
     private int score;
     private int avatar;
-    private int[] scoreArray = new int[16];
+    private int[] scoreArray = new int[16]; //maybe better to make the array in the Human_Player method?
 
     Human_Player(String name, int avatar){
         this.name = name;
