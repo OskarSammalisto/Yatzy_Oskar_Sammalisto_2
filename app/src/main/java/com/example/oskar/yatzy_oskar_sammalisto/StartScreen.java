@@ -37,21 +37,21 @@ public class StartScreen extends AppCompatActivity {
         Toast.makeText(this,  radioButton.getText() + " mode selected.", Toast.LENGTH_SHORT).show();
 
         //see which button is clicked
-        switch (view.getId()){
-            case R.id.singlePlayer:
-                if (checked)
-
-
-                    break;
-            case R.id.twoPlayer:
-                if (checked)
-
-                    break;
-            case  R.id.vsAi:
-                if (checked)
-
-                    break;
-        }
+//        switch (view.getId()){
+//            case R.id.singlePlayer:
+//                if (checked)
+//
+//
+//                    break;
+//            case R.id.twoPlayer:
+//                if (checked)
+//
+//                    break;
+//            case  R.id.vsAi:
+//                if (checked)
+//
+//                    break;
+//        }
     }
 
 }
