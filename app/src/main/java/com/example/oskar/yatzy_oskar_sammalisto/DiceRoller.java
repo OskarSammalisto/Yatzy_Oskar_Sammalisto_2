@@ -13,7 +13,7 @@ public class DiceRoller {
 
         for(int i = 0; i < throwArray.length; i++){
            // Random random = new Random();
-            throwArray[i] = (int)(Math.random() * ((6 - 1) +1));
+            throwArray[i] = (int)(Math.random() * 6 ) +1 ;
 
         }
 
