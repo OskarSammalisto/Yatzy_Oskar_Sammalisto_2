@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Yatzy_Oskar_Sammalisto</string>
     <string name="ones">Ettor</string>
     <string name="twos">Tvåor</string>
     <string name="threes">Treor</string>
