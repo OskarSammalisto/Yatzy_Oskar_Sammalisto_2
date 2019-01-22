@@ -4,5 +4,5 @@ import java.util.Random;
 
 public class DiceRoller {
 
-    Random random = new Random();
+    Random randomo = new Random();
 }
