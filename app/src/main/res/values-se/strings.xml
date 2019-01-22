@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ones">Ettor</string>
+    <string name="twos">Tvåor</string>
+    <string name="threes">Treor</string>
+    <string name="fours">Firor</string>
+    <string name="fives">Femmor</string>
+    <string name="sixes">Sexor</string>
+    <string name="sum">Summa</string>
+    <string name="bonus">Bonus</string>
+    <string name="pair">1 Par</string>
+    <string name="two_pairs">2 Par</string>
+    <string name="three_of_a_kind">Triss</string>
+    <string name="quads">Fyrtal</string>
+    <string name="small_straight">1–5</string>
+    <string name="big_straight">2–6</string>
+    <string name="full_house">Kåk</string>
+    <string name="chance">Chans</string>
+    <string name="yatzy">Yatzy</string>
+    <string name="total">Total</string>
+</resources>

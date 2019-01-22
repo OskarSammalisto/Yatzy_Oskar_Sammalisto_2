@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Yatzy_Oskar_Sammalisto</string>
+    <string name="ones">Ones</string>
+    <string name="twos">Twos</string>
+    <string name="threes">Threes</string>
+    <string name="fours">Fours</string>
+    <string name="fives">Fives</string>
+    <string name="sixes">Sixes</string>
+    <string name="sum">Sum</string>
+    <string name="bonus">Bonus</string>
+    <string name="pair">Pair</string>
+    <string name="two_pairs">2 Pairs</string>
+    <string name="three_of_a_kind">3 of a Kind</string>
+    <string name="quads">Quads</string>
+    <string name="small_straight">1–5</string>
+    <string name="big_straight">2–6</string>
+    <string name="full_house">Full House</string>
+    <string name="chance">Chance</string>
+    <string name="yatzy">Yatzy</string>
+    <string name="total">Total</string>
 </resources>
