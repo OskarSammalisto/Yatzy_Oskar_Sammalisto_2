@@ -9,6 +9,13 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    ToggleButton buttonOne;
+    ToggleButton buttonTwo;
+    ToggleButton buttonThree;
+    ToggleButton buttonFour;
+    ToggleButton buttonFive;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,18 +28,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rollDice(View view){
-        DiceRoller diceRoller = new DiceRoller();
-        //DiceRoller.diceRoller();
-        int[] throwArray = DiceRoller.diceRoller();
 
+        buttonOne =  findViewById(R.id.toggleButtonDiceOne);
+        buttonTwo =  findViewById(R.id.toggleButtonDiceTwo);
+        buttonThree = findViewById(R.id.toggleButtonDiceThree);
+        buttonFour =  findViewById(R.id.toggleButtonDiceFour);
+        buttonFive =  findViewById(R.id.toggleButtonDiceFive);
 
-        ToggleButton buttonOne =  findViewById(R.id.toggleButtonDiceOne);
-        ToggleButton buttonTwo =  findViewById(R.id.toggleButtonDiceTwo);
-        ToggleButton buttonThree = findViewById(R.id.toggleButtonDiceThree);
-        ToggleButton buttonFour =  findViewById(R.id.toggleButtonDiceFour);
-        ToggleButton buttonFive =  findViewById(R.id.toggleButtonDiceFive);
-
+        int[] throwArray = new int[5];
         ToggleButton[] buttonArray = {buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive};
+        //DiceRoller diceRoller = new DiceRoller();
+        //DiceRoller.diceRoller();
+       // int[] throwArray = DiceRoller.diceRoller();
+
+
+
+        for(int i = 0; i < throwArray.length; i++){
+            if(!buttonArray[i].isChecked())
+            throwArray[i] = (int)(Math.random() * 6 ) +1 ;
+
+        }
+
+
+
+
+
 
         for(int i = 0; i < buttonArray.length; i++){
             if(!buttonArray[i].isChecked()){
@@ -85,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 
-        // Log.d("throw", "throw");
+
+
 
 
     }
