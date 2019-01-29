@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton buttonFour;
     ToggleButton buttonFive;
 
+    int[] throwArray = new int[5];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     public void rollDice(View view){
 
         buttonOne =  findViewById(R.id.toggleButtonDiceOne);
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFour =  findViewById(R.id.toggleButtonDiceFour);
         buttonFive =  findViewById(R.id.toggleButtonDiceFive);
 
-        int[] throwArray = new int[5];
+
         ToggleButton[] buttonArray = {buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive};
         //DiceRoller diceRoller = new DiceRoller();
         //DiceRoller.diceRoller();
@@ -117,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
             throwArray[i] = (int)(Math.random() * 6 ) +1 ;
 
         }
+
+
 
 
 
@@ -147,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
                     buttonArray[i].setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_six_selected), null, null);
             }
         }
+
+
 
 //        if(!buttonOne.isChecked()) {
 //            if (throwArray[1] == 1)
@@ -179,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 
