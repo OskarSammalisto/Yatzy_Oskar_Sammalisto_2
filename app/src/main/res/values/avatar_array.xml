@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="avatarArray">
+        <item>@drawable/bill</item>
+        <item>@drawable/chris</item>
+        <item>@drawable/deven</item>
+        <item>@drawable/jeremy</item>
+        <item>@drawable/john</item>
+        <item>@drawable/jonathan</item>
+        <item>@drawable/puma</item>
+        <item>@drawable/rebecca</item>
+        <item>@drawable/russell</item>
+        <item>@drawable/susan</item>
+    </integer-array>
+
+
+
+
+</resources>

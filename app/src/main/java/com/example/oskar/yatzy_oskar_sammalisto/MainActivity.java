@@ -2,6 +2,7 @@ package com.example.oskar.yatzy_oskar_sammalisto;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,14 +47,26 @@ public class MainActivity extends AppCompatActivity {
 
         //set avatar for players
 
+        TypedArray avatarArray = getResources().obtainTypedArray(R.array.avatarArray);
         ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
         ImageView imageViewPlayerTwo = (ImageView) findViewById(R.id.avatarTwo);
 
+        imageViewPlayerOne.setImageResource(avatarArray.getResourceId(playerOneAvatar, -1));
+        imageViewPlayerTwo.setImageResource(avatarArray.getResourceId(playerTwoAvatar, -1));
+
+
+        avatarArray.recycle();
+
+       // PlayerAvatarSetter avatarSetter = new PlayerAvatarSetter(playerOneAvatar, playerTwoAvatar);
+
+//        ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
+//        ImageView imageViewPlayerTwo = (ImageView) findViewById(R.id.avatarTwo);
+
 
         //need a method/if-sats to display selected avatar
-        imageViewPlayerOne.setImageResource(R.drawable.bill);
-
-        imageViewPlayerTwo.setImageResource(R.drawable.chris);
+//        imageViewPlayerOne.setImageResource(R.drawable.bill);
+//
+//        imageViewPlayerTwo.setImageResource(R.drawable.chris);
 
 
         // Test code to see that string from start screen is saved
