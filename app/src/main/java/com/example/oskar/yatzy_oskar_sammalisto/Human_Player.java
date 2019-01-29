@@ -36,4 +36,8 @@ public class Human_Player {
     public void setAvatar(int avatar) {
         this.avatar = avatar;
     }
+
+    public int[] getScoreArray() {
+        return scoreArray;
+    }
 }

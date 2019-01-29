@@ -6,8 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <Spinner
+        android:id="@+id/avatarPlayerOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/playerOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerOne"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/avatarPlayerTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/playerTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerTwo"
+        app:layout_constraintTop_toTopOf="@+id/playerTwo">
+
+    </Spinner>
+
+
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/playerOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,16 +51,18 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/playerOne"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.69" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/playerTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -35,12 +71,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/playerTwo"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/playerOne" />
 
     <Button
         android:id="@+id/button2"
@@ -52,7 +90,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="52dp"
         android:onClick="startGame"
-        android:text="Button"
+        android:text="@string/startButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
@@ -60,8 +98,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="252dp"
-        android:layout_height="240dp"
+        android:layout_width="224dp"
+        android:layout_height="190dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="64dp"
@@ -81,7 +119,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/playerOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" >
@@ -98,8 +136,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="checkButton"
-        android:text="Solo"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:text="@string/solo"
+        app:layout_constraintBottom_toTopOf="@+id/playerOne"
         app:layout_constraintEnd_toStartOf="@+id/twoPlayer"
         app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,8 +155,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="checkButton"
-        android:text="2 Player"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:text="@string/twoPlayer"
+        app:layout_constraintBottom_toTopOf="@+id/playerOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -136,8 +174,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="checkButton"
-        android:text="VS AI"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:text="@string/vsAi"
+        app:layout_constraintBottom_toTopOf="@+id/playerOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/twoPlayer"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

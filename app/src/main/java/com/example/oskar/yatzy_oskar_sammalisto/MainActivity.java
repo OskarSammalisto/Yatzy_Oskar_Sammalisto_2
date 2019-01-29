@@ -1,10 +1,14 @@
 package com.example.oskar.yatzy_oskar_sammalisto;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,11 +25,63 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        Bundle bundle = getIntent().getExtras();
+//        String playerOne = bundle.getString("playerOne");
+//        String playerTwo = bundle.getString("playerTwo");
+
+        //takes in user names and avatar numbers from StartScreen activity
+        String playerOne = getIntent().getStringExtra("playerOne");
+        String playerTwo = getIntent().getStringExtra("playerTwo");
+        int playerOneAvatar = getIntent().getIntExtra("avatar_player_one", 1);
+        int playerTwoAvatar = getIntent().getIntExtra("avatar_player_two", 2);
         //DiceEventListener diceSelect = findViewById(R.id.dieOne);
         //diceSelect.setOnPressDie(R.drawable.dice_one_selected);
 
 
+        //creates player one and two and applies user names and avatars
+        Human_Player playerOneCreated = new Human_Player(playerOne, playerOneAvatar);
+        Human_Player playerTwoCreated = new Human_Player(playerTwo, playerTwoAvatar);
+
+
+
+        //set avatar for players
+
+        ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
+        ImageView imageViewPlayerTwo = (ImageView) findViewById(R.id.avatarTwo);
+
+
+        //need a method/if-sats to display selected avatar
+        imageViewPlayerOne.setImageResource(R.drawable.bill);
+
+        imageViewPlayerTwo.setImageResource(R.drawable.chris);
+
+
+        // Test code to see that string from start screen is saved
+        // TextView textView = (TextView) findViewById(R.id.testString);
+        // textView.setText(playerOneCreated.getName());
+
+        // testing avatar spinner int
+        // textView.setText(String.valueOf(playerOneAvatar));
+
+
     }
+
+    //warns user about going back to menu
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage(getString(R.string.backWarning))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton(getString(R.string.no), null)
+                .show();
+    }
+
+
 
     public void rollDice(View view){
 
