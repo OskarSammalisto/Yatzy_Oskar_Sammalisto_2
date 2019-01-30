@@ -21,16 +21,15 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton buttonFour;
     ToggleButton buttonFive;
 
-    int[] throwArray = new int[5];
+    private int[] throwArray = new int[5];
+    private int throwCounter = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Bundle bundle = getIntent().getExtras();
-//        String playerOne = bundle.getString("playerOne");
-//        String playerTwo = bundle.getString("playerTwo");
 
         //takes in user names and avatar numbers from StartScreen activity
         String playerOne = getIntent().getStringExtra("playerOne");
@@ -42,13 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         //creates player one and two and applies user names and avatars
-        Human_Player playerOneCreated = new Human_Player(playerOne, playerOneAvatar);
+        Human_Player playerOneCreated = new Human_Player(playerOne, playerOneAvatar);  //take away avatar or change how its set
         Human_Player playerTwoCreated = new Human_Player(playerTwo, playerTwoAvatar);
 
 
 
         //set avatar for players
-
         TypedArray avatarArray = getResources().obtainTypedArray(R.array.avatarArray);
         ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
         ImageView imageViewPlayerTwo = (ImageView) findViewById(R.id.avatarTwo);
@@ -59,16 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         avatarArray.recycle();
 
-       // PlayerAvatarSetter avatarSetter = new PlayerAvatarSetter(playerOneAvatar, playerTwoAvatar);
-
-//        ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
-//        ImageView imageViewPlayerTwo = (ImageView) findViewById(R.id.avatarTwo);
-
-
-        //need a method/if-sats to display selected avatar
-//        imageViewPlayerOne.setImageResource(R.drawable.bill);
-//
-//        imageViewPlayerTwo.setImageResource(R.drawable.chris);
 
 
         // Test code to see that string from start screen is saved
@@ -80,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
     //warns user about going back to menu
     @Override
@@ -101,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void rollDice(View view){
 
+
+        // If sats for max three throws
+        if(throwCounter < 3){
+
+
+
+
         buttonOne =  findViewById(R.id.toggleButtonDiceOne);
         buttonTwo =  findViewById(R.id.toggleButtonDiceTwo);
         buttonThree = findViewById(R.id.toggleButtonDiceThree);
@@ -115,16 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        for(int i = 0; i < throwArray.length; i++){
-            if(!buttonArray[i].isChecked())
-            throwArray[i] = (int)(Math.random() * 6 ) +1 ;
-
-        }
-
-
-
-
-
+        throwArray = DiceRoller.rollTheDice(buttonArray, throwArray);
 
 
 
@@ -153,7 +142,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        throwCounter++;
+     }
 
+
+
+        //        for(int i = 0; i < throwArray.length; i++){
+//            if(!buttonArray[i].isChecked())
+//            throwArray[i] = (int)(Math.random() * 6 ) +1 ;
+//
+//        }
 
 //        if(!buttonOne.isChecked()) {
 //            if (throwArray[1] == 1)
