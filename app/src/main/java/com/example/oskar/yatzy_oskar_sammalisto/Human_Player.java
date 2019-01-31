@@ -7,9 +7,9 @@ public class Human_Player {
     private int avatar;
     private int[] scoreArray = new int[16]; //maybe better to make the array in the Human_Player method?
 
-    Human_Player(String name, int avatar){
+    Human_Player(String name){
         this.name = name;
-        this.avatar = avatar;
+
     }
 
 
@@ -39,5 +39,9 @@ public class Human_Player {
 
     public int[] getScoreArray() {
         return scoreArray;
+    }
+
+    public void setScoreArray(int[] scoreArray) {
+        this.scoreArray = scoreArray;
     }
 }

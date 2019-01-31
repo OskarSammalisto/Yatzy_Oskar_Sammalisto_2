@@ -10,9 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
 
     ToggleButton buttonOne;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private int[] throwArray = new int[5];
     private int throwCounter = 0;
+    private int playerTurnIndicator = 1;
+    public static String playerOne;
+    private static String playerTwo;
 
 
     @Override
@@ -32,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //takes in user names and avatar numbers from StartScreen activity
-        String playerOne = getIntent().getStringExtra("playerOne");
-        String playerTwo = getIntent().getStringExtra("playerTwo");
+//         String playerOne = getIntent().getStringExtra("playerOne");
+//         String playerTwo = getIntent().getStringExtra("playerTwo");
         int playerOneAvatar = getIntent().getIntExtra("avatar_player_one", 1);
         int playerTwoAvatar = getIntent().getIntExtra("avatar_player_two", 2);
         //DiceEventListener diceSelect = findViewById(R.id.dieOne);
@@ -41,10 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         //creates player one and two and applies user names and avatars
-        Human_Player playerOneCreated = new Human_Player(playerOne, playerOneAvatar);  //take away avatar or change how its set
-        Human_Player playerTwoCreated = new Human_Player(playerTwo, playerTwoAvatar);
-
-
+//        Human_Player playerOneCreated = new Human_Player(playerOne);
+//        Human_Player playerTwoCreated = new Human_Player(playerTwo);
+                                                                             //not getting the names
+        playerOne = getIntent().getStringExtra("playerOne");
+        playerTwo = getIntent().getStringExtra("playerTwo");
 
         //set avatar for players
         TypedArray avatarArray = getResources().obtainTypedArray(R.array.avatarArray);
@@ -56,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         avatarArray.recycle();
+//        getPlayerNames();
+
+
 
 
 
@@ -68,6 +76,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+        public void getPlayerNames(){
+
+        playerOne = getIntent().getStringExtra("playerOne");
+        playerTwo = getIntent().getStringExtra("playerTwo");
+
+    }
+
+
+
+    Human_Player playerOneCreated = new Human_Player(MainActivity.playerOne);  //take away avatar or change how its set
+    Human_Player playerTwoCreated = new Human_Player(playerTwo);
 
 
 
@@ -186,6 +206,85 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void scoreboardClicked(View view){
+
+        String id = getResources().getResourceName(view.getId());
+
+        Toast.makeText(this, id.toString() + " clicker worked.", Toast.LENGTH_SHORT).show();
+
+        switch (view.getId()){
+            case R.id.ones:
+
+                TextView textView = findViewById(R.id.testString);
+                int setScore = YatzyScoring.ones(throwArray);
+                textView.setText(Integer.toString(setScore));
+                /* YatzyScoring.ones(throwArray); */
+//                 TextView textView = findViewById(R.id.testString);
+//                 textView.setText(playerOneCreated.getName());
+
+
+
+
+
+                break;
+            case R.id.twos:
+
+                break;
+            case R.id.threes:
+
+                break;
+            case R.id.fours:
+
+                break;
+            case R.id.fives:
+
+                break;
+            case R.id.sixes:
+
+                break;
+            case R.id.pair:
+
+                break;
+            case R.id.two_pairs:
+
+                break;
+            case R.id.three_of_a_kind:
+
+                break;
+            case R.id.quads:
+
+                break;
+            case R.id.small_straight:
+
+                break;
+            case R.id.big_straight:
+
+                break;
+            case R.id.full_house:
+
+                break;
+            case R.id.chance:
+
+                break;
+            case R.id.yatzy:
+
+                break;
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+    }
 
 
 

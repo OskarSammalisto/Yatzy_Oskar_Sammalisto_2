@@ -48,6 +48,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -118,6 +119,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -186,6 +188,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -251,6 +254,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -316,6 +320,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -381,6 +386,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -576,6 +582,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -641,6 +648,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -706,6 +714,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -771,6 +780,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -836,6 +846,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -901,6 +912,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -966,6 +978,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -1031,6 +1044,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 
@@ -1096,6 +1110,7 @@
             android:layout_height="0dp"
             android:layout_margin="1dp"
             android:layout_weight="1"
+            android:onClick="scoreboardClicked"
 
             >
 

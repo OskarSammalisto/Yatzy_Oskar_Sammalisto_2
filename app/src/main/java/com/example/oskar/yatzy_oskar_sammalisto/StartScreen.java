@@ -56,6 +56,8 @@ public class StartScreen extends AppCompatActivity {
         String playerOneName = playerOne.getText().toString();//sharedPref.getString(NAME_KEY, null);
         String playerTwoName = playerTwo.getText().toString();//sharedPref.getString(NAME_KEY, null);
 
+
+
         Spinner spinnerPlayerOne = (Spinner) findViewById(R.id.avatarPlayerOne);
         Spinner spinnerPlayerTwo = (Spinner) findViewById(R.id.avatarPlayerTwo);
 
