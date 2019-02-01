@@ -1,5 +1,7 @@
 package com.example.oskar.yatzy_oskar_sammalisto;
 
+import java.util.stream.IntStream;
+
 public class Human_Player {
 
     private String name;
@@ -41,7 +43,19 @@ public class Human_Player {
         return scoreArray;
     }
 
-    public void setScoreArray(int[] scoreArray) {
-        this.scoreArray = scoreArray;
+    public void setScoreArray(int i, int points) {
+        this.scoreArray[i] = points;
     }
+
+    public int getScoreArraySum(){
+        int sum = 0;
+        for(int i = 0; i > scoreArray.length; i++){
+            sum += scoreArray[i];
+        }
+
+
+        return sum;
+    }
+
+
 }

@@ -72,7 +72,7 @@
                 />
 
             <TextView
-                android:id="@+id/testString"
+                android:id="@+id/onesOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -91,6 +91,7 @@
                 />
 
             <TextView
+                android:id="@+id/onesTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -143,6 +144,7 @@
                 />
 
             <TextView
+                android:id="@+id/twosOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -161,6 +163,7 @@
                 />
 
             <TextView
+                android:id="@+id/twosTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -211,6 +214,7 @@
                 />
 
             <TextView
+                android:id="@+id/threesOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -229,6 +233,7 @@
                 />
 
             <TextView
+                android:id="@+id/threesTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -277,6 +282,7 @@
                 />
 
             <TextView
+                android:id="@+id/foursOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -295,6 +301,7 @@
                 />
 
             <TextView
+                android:id="@+id/foursTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -343,6 +350,7 @@
                 />
 
             <TextView
+                android:id="@+id/fivesOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -361,6 +369,7 @@
                 />
 
             <TextView
+                android:id="@+id/fivesTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -409,6 +418,7 @@
                 />
 
             <TextView
+                android:id="@+id/sixesOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -427,6 +437,7 @@
                 />
 
             <TextView
+                android:id="@+id/sixesTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -474,6 +485,7 @@
                 />
 
             <TextView
+                android:id="@+id/sumOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -492,6 +504,7 @@
                 />
 
             <TextView
+                android:id="@+id/sumTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -539,6 +552,7 @@
                 />
 
             <TextView
+                android:id="@+id/bonusOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -557,6 +571,7 @@
                 />
 
             <TextView
+                android:id="@+id/bonusTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -605,6 +620,7 @@
                 />
 
             <TextView
+                android:id="@+id/pairOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -623,6 +639,7 @@
                 />
 
             <TextView
+                android:id="@+id/pairTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -671,6 +688,7 @@
                 />
 
             <TextView
+                android:id="@+id/twoPairOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -689,6 +707,7 @@
                 />
 
             <TextView
+                android:id="@+id/twoPairTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -737,6 +756,7 @@
                 />
 
             <TextView
+                android:id="@+id/threeOfOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -755,6 +775,7 @@
                 />
 
             <TextView
+                android:id="@+id/threeOfTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -803,6 +824,7 @@
                 />
 
             <TextView
+                android:id="@+id/quadsOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -821,6 +843,7 @@
                 />
 
             <TextView
+                android:id="@+id/quadsTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -869,6 +892,7 @@
                 />
 
             <TextView
+                android:id="@+id/smallStOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -887,6 +911,7 @@
                 />
 
             <TextView
+                android:id="@+id/smallStTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -935,6 +960,7 @@
                 />
 
             <TextView
+                android:id="@+id/largeStOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -953,6 +979,7 @@
                 />
 
             <TextView
+                android:id="@+id/largeStTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1001,6 +1028,7 @@
                 />
 
             <TextView
+                android:id="@+id/fullHouseOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1019,6 +1047,7 @@
                 />
 
             <TextView
+                android:id="@+id/fullHouseTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1067,6 +1096,7 @@
                 />
 
             <TextView
+                android:id="@+id/chanceOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1085,6 +1115,7 @@
                 />
 
             <TextView
+                android:id="@+id/chanceTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1133,6 +1164,7 @@
                 />
 
             <TextView
+                android:id="@+id/yatzyOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1151,6 +1183,7 @@
                 />
 
             <TextView
+                android:id="@+id/yatzyTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1198,6 +1231,7 @@
                 />
 
             <TextView
+                android:id="@+id/totalOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -1216,6 +1250,7 @@
                 />
 
             <TextView
+                android:id="@+id/totalTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"

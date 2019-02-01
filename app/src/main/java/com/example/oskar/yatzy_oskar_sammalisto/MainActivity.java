@@ -25,8 +25,11 @@ public class MainActivity extends AppCompatActivity  {
     private int[] throwArray = new int[5];
     private int throwCounter = 0;
     private int playerTurnIndicator = 1;
-    public static String playerOne;
+    private int roundCounter = 0;
+    private static String playerOne;
     private static String playerTwo;
+
+
 
 
     @Override
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity  {
 
         avatarArray.recycle();
 //        getPlayerNames();
+//        createPlayers();
 
 
 
@@ -77,17 +81,22 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-        public void getPlayerNames(){
+//        public void createPlayers(){
+//
+//        playerOne = getIntent().getStringExtra("playerOne");
+//        playerTwo = getIntent().getStringExtra("playerTwo");
+//
+//
+//
+//    }
 
-        playerOne = getIntent().getStringExtra("playerOne");
-        playerTwo = getIntent().getStringExtra("playerTwo");
-
-    }
 
 
-
-    Human_Player playerOneCreated = new Human_Player(MainActivity.playerOne);  //take away avatar or change how its set
+    Human_Player playerOneCreated = new Human_Player(playerOne);  //take away avatar or change how its set
     Human_Player playerTwoCreated = new Human_Player(playerTwo);
+
+
+
 
 
 
@@ -110,7 +119,17 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
+
+
     public void rollDice(View view){
+
+        if(roundCounter < 30){
+
+
+
+
+
+
 
 
         // If sats for max three throws
@@ -132,8 +151,20 @@ public class MainActivity extends AppCompatActivity  {
        // int[] throwArray = DiceRoller.diceRoller();
 
 
+            //untoggle buttons at start of round
+            if(throwCounter == 0){
 
-        throwArray = DiceRoller.rollTheDice(buttonArray, throwArray);
+                buttonOne.setChecked(false);
+                buttonTwo.setChecked(false);
+                buttonThree.setChecked(false);
+                buttonFour.setChecked(false);
+                buttonFive.setChecked(false);
+
+
+            }
+
+
+            throwArray = DiceRoller.rollTheDice(buttonArray, throwArray);
 
 
 
@@ -167,41 +198,12 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-        //        for(int i = 0; i < throwArray.length; i++){
-//            if(!buttonArray[i].isChecked())
-//            throwArray[i] = (int)(Math.random() * 6 ) +1 ;
-//
-//        }
-
-//        if(!buttonOne.isChecked()) {
-//            if (throwArray[1] == 1)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_one), null, null);
-//
-//            else if (throwArray[1] == 2)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_two), null, null);
-//
-//            else if (throwArray[1] == 3)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_three), null, null);
-//
-//            else if (throwArray[1] == 4)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_four), null, null);
-//
-//            else if (throwArray[1] == 5)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_five), null, null);
-//
-//            else if (throwArray[1] == 6)
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_six), null, null);
-//
-//            else
-//                buttonOne.setCompoundDrawablesWithIntrinsicBounds(null, getResources().getDrawable(R.drawable.dice_six_selected), null, null);
-//            //buttonOne.setDrawableTop
-//
-//        }
 
 
 
 
 
+        }
 
     }
 
@@ -210,18 +212,44 @@ public class MainActivity extends AppCompatActivity  {
 
         String id = getResources().getResourceName(view.getId());
 
-        Toast.makeText(this, id.toString() + " clicker worked.", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, id.toString() + " clicker worked.", Toast.LENGTH_SHORT).show();
 
-        switch (view.getId()){
+
+    if(throwCounter!= 0) {
+        switch (view.getId()) {
             case R.id.ones:
 
-                TextView textView = findViewById(R.id.testString);
-                int setScore = YatzyScoring.ones(throwArray);
-                textView.setText(Integer.toString(setScore));
-                /* YatzyScoring.ones(throwArray); */
-//                 TextView textView = findViewById(R.id.testString);
-//                 textView.setText(playerOneCreated.getName());
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(0, YatzyScoring.ones(throwArray));
+
+                    TextView textView = findViewById(R.id.onesOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[0]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+//                int setScore = YatzyScoring.ones(throwArray);
+//                textView.setText(Integer.toString(setScore));
+
+
+                    /* YatzyScoring.ones(throwArray); */
+//                 TextView textView = findViewById(R.id.testString);
+//                String name = playerOneCreated.getName();
+//                 textView.setText(name);
+
+                } else {
+                    playerTwoCreated.setScoreArray(0, YatzyScoring.ones(throwArray));
+
+                    TextView textView = findViewById(R.id.onesTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[0]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
 
 
@@ -229,57 +257,403 @@ public class MainActivity extends AppCompatActivity  {
                 break;
             case R.id.twos:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
+
+                    TextView textView = findViewById(R.id.twosOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[1]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
+
+                    TextView textView = findViewById(R.id.twosTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[1]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.threes:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
+
+                    TextView textView = findViewById(R.id.threesOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[2]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
+
+                    TextView textView = findViewById(R.id.threesTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[2]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
                 break;
             case R.id.fours:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
+
+                    TextView textView = findViewById(R.id.foursOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[3]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
+
+                    TextView textView = findViewById(R.id.foursTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[3]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.fives:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
+
+                    TextView textView = findViewById(R.id.fivesOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[4]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
+
+                    TextView textView = findViewById(R.id.fivesTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[4]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
 
                 break;
             case R.id.sixes:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
+
+                    TextView textView = findViewById(R.id.sixesOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[5]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
+
+                    TextView textView = findViewById(R.id.sixesTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[5]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.pair:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
+
+                    TextView textView = findViewById(R.id.pairOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[7]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
+
+                    TextView textView = findViewById(R.id.pairTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[7]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
                 break;
             case R.id.two_pairs:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
+
+                    TextView textView = findViewById(R.id.twoPairOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[8]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
+
+                    TextView textView = findViewById(R.id.twoPairTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[8]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.three_of_a_kind:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
+
+                    TextView textView = findViewById(R.id.threeOfOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[9]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
+
+                    TextView textView = findViewById(R.id.threeOfTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[9]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
                 break;
             case R.id.quads:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
+
+                    TextView textView = findViewById(R.id.quadsOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[10]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
+
+                    TextView textView = findViewById(R.id.quadsTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[10]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.small_straight:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
+
+                    TextView textView = findViewById(R.id.smallStOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[11]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
+
+                    TextView textView = findViewById(R.id.smallStTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[11]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
                 break;
             case R.id.big_straight:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
+
+                    TextView textView = findViewById(R.id.largeStOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[12]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
+
+                    TextView textView = findViewById(R.id.largeStTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[12]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.full_house:
+
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
+
+                    TextView textView = findViewById(R.id.fullHouseOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[13]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
+
+                    TextView textView = findViewById(R.id.fullHouseTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[13]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
 
                 break;
             case R.id.chance:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
+
+                    TextView textView = findViewById(R.id.chanceOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[14]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
+
+                    TextView textView = findViewById(R.id.chanceTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[14]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
             case R.id.yatzy:
 
+                if (playerTurnIndicator == 1) {
+
+                    playerOneCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
+
+                    TextView textView = findViewById(R.id.yatzyOne);
+                    textView.setText(Integer.toString(playerOneCreated.getScoreArray()[15]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 2;
+                    throwCounter = 0;
+
+
+
+                } else {
+                    playerTwoCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
+
+                    TextView textView = findViewById(R.id.yatzyTwo);
+                    textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[15]));
+
+                    roundCounter++;
+                    playerTurnIndicator = 1;
+                    throwCounter = 0;
+                }
+
                 break;
 
 
+        }
+    }
 
+        if(playerTurnIndicator == 1){
+            Toast.makeText(this, "Player Ones Turn!.", Toast.LENGTH_SHORT).show();
+        }
 
-
-
-
-
+        if (playerTurnIndicator == 2){
+            Toast.makeText(this, "Player Twos Turn!.", Toast.LENGTH_SHORT).show();
         }
 
 
+                                                                                //always returns zero
+        TextView textView = findViewById(R.id.totalOne);
+        textView.setText(Integer.toString(playerOneCreated.getScoreArraySum()));
+
+        TextView textViewTwo = findViewById(R.id.totalTwo);
+        textViewTwo.setText(Integer.toString(playerTwoCreated.getScoreArraySum()));
 
 
 
