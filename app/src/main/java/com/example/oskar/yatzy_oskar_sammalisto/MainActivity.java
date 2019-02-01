@@ -213,16 +213,17 @@ public class MainActivity extends AppCompatActivity  {
         String id = getResources().getResourceName(view.getId());
 
        // Toast.makeText(this, id.toString() + " clicker worked.", Toast.LENGTH_SHORT).show();
-
+        int toastRuler = 0;
 
     if(throwCounter!= 0) {
         switch (view.getId()) {
             case R.id.ones:
 
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(0) != 1) {
 
                     playerOneCreated.setScoreArray(0, YatzyScoring.ones(throwArray));
+                    playerOneCreated.setFieldChecker(0);
 
                     TextView textView = findViewById(R.id.onesOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[0]));
@@ -240,8 +241,11 @@ public class MainActivity extends AppCompatActivity  {
 //                String name = playerOneCreated.getName();
 //                 textView.setText(name);
 
-                } else {
+                }
+
+                else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(0) != 1) {
                     playerTwoCreated.setScoreArray(0, YatzyScoring.ones(throwArray));
+                    playerTwoCreated.setFieldChecker(0);
 
                     TextView textView = findViewById(R.id.onesTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[0]));
@@ -251,7 +255,10 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
 
-
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
 
                 break;
@@ -260,6 +267,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
+                    playerOneCreated.setFieldChecker(1);
 
                     TextView textView = findViewById(R.id.twosOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[1]));
@@ -272,6 +280,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
+                    playerTwoCreated.setFieldChecker(1);
 
                     TextView textView = findViewById(R.id.twosTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[1]));
@@ -287,6 +296,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
+                    playerOneCreated.setFieldChecker(2);
 
                     TextView textView = findViewById(R.id.threesOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[2]));
@@ -299,6 +309,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
+                    playerTwoCreated.setFieldChecker(2);
 
                     TextView textView = findViewById(R.id.threesTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[2]));
@@ -314,6 +325,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
+                    playerOneCreated.setFieldChecker(3);
 
                     TextView textView = findViewById(R.id.foursOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[3]));
@@ -326,6 +338,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
+                    playerTwoCreated.setFieldChecker(3);
 
                     TextView textView = findViewById(R.id.foursTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[3]));
@@ -341,6 +354,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
+                    playerOneCreated.setFieldChecker(4);
 
                     TextView textView = findViewById(R.id.fivesOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[4]));
@@ -353,6 +367,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
+                    playerTwoCreated.setFieldChecker(4);
 
                     TextView textView = findViewById(R.id.fivesTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[4]));
@@ -369,6 +384,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
+                    playerOneCreated.setFieldChecker(5);
 
                     TextView textView = findViewById(R.id.sixesOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[5]));
@@ -381,6 +397,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
+                    playerTwoCreated.setFieldChecker(5);
 
                     TextView textView = findViewById(R.id.sixesTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[5]));
@@ -396,6 +413,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
+                    playerOneCreated.setFieldChecker(7);
 
                     TextView textView = findViewById(R.id.pairOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[7]));
@@ -408,6 +426,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
+                    playerTwoCreated.setFieldChecker(7);
 
                     TextView textView = findViewById(R.id.pairTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[7]));
@@ -423,6 +442,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
+                    playerOneCreated.setFieldChecker(8);
 
                     TextView textView = findViewById(R.id.twoPairOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[8]));
@@ -435,6 +455,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
+                    playerTwoCreated.setFieldChecker(8);
 
                     TextView textView = findViewById(R.id.twoPairTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[8]));
@@ -450,6 +471,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
+                    playerOneCreated.setFieldChecker(9);
 
                     TextView textView = findViewById(R.id.threeOfOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[9]));
@@ -462,6 +484,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
+                    playerTwoCreated.setFieldChecker(9);
 
                     TextView textView = findViewById(R.id.threeOfTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[9]));
@@ -477,6 +500,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
+                    playerOneCreated.setFieldChecker(10);
 
                     TextView textView = findViewById(R.id.quadsOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[10]));
@@ -489,6 +513,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
+                    playerTwoCreated.setFieldChecker(10);
 
                     TextView textView = findViewById(R.id.quadsTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[10]));
@@ -504,6 +529,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
+                    playerOneCreated.setFieldChecker(11);
 
                     TextView textView = findViewById(R.id.smallStOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[11]));
@@ -516,6 +542,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
+                    playerTwoCreated.setFieldChecker(11);
 
                     TextView textView = findViewById(R.id.smallStTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[11]));
@@ -531,6 +558,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
+                    playerOneCreated.setFieldChecker(12);
 
                     TextView textView = findViewById(R.id.largeStOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[12]));
@@ -543,6 +571,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
+                    playerTwoCreated.setFieldChecker(12);
 
                     TextView textView = findViewById(R.id.largeStTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[12]));
@@ -558,6 +587,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
+                    playerOneCreated.setFieldChecker(13);
 
                     TextView textView = findViewById(R.id.fullHouseOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[13]));
@@ -570,6 +600,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
+                    playerTwoCreated.setFieldChecker(13);
 
                     TextView textView = findViewById(R.id.fullHouseTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[13]));
@@ -585,6 +616,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
+                    playerOneCreated.setFieldChecker(14);
 
                     TextView textView = findViewById(R.id.chanceOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[14]));
@@ -597,6 +629,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
+                    playerTwoCreated.setFieldChecker(14);
 
                     TextView textView = findViewById(R.id.chanceTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[14]));
@@ -612,6 +645,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (playerTurnIndicator == 1) {
 
                     playerOneCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
+                    playerOneCreated.setFieldChecker(15);
 
                     TextView textView = findViewById(R.id.yatzyOne);
                     textView.setText(Integer.toString(playerOneCreated.getScoreArray()[15]));
@@ -624,6 +658,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else {
                     playerTwoCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
+                    playerTwoCreated.setFieldChecker(15);
 
                     TextView textView = findViewById(R.id.yatzyTwo);
                     textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[15]));
@@ -639,24 +674,26 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-        if(playerTurnIndicator == 1){
+        if(playerTurnIndicator == 1 && toastRuler != 1){
             Toast.makeText(this, "Player Ones Turn!.", Toast.LENGTH_SHORT).show();
         }
 
-        if (playerTurnIndicator == 2){
+        if (playerTurnIndicator == 2 && toastRuler != 1){
             Toast.makeText(this, "Player Twos Turn!.", Toast.LENGTH_SHORT).show();
         }
 
 
                                                                                 //always returns zero
         TextView textView = findViewById(R.id.totalOne);
-        textView.setText(Integer.toString(playerOneCreated.getScoreArraySum()));
+        int sumPlayerOne = playerOneCreated.getScoreArraySum();
+        textView.setText(Integer.toString(sumPlayerOne));
 
         TextView textViewTwo = findViewById(R.id.totalTwo);
-        textViewTwo.setText(Integer.toString(playerTwoCreated.getScoreArraySum()));
+        int sumPlayerTwo = playerTwoCreated.getScoreArraySum();
+        textViewTwo.setText(Integer.toString(sumPlayerTwo));
 
 
-
+        toastRuler = 0;
 
     }
 

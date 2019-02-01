@@ -8,6 +8,7 @@ public class Human_Player {
     private int score;
     private int avatar;
     private int[] scoreArray = new int[16]; //maybe better to make the array in the Human_Player method?
+    private int[] fieldChecker = new int[16];
 
     Human_Player(String name){
         this.name = name;
@@ -49,12 +50,23 @@ public class Human_Player {
 
     public int getScoreArraySum(){
         int sum = 0;
-        for(int i = 0; i > scoreArray.length; i++){
+        for(int i = 0; i < scoreArray.length; i++){
             sum += scoreArray[i];
         }
 
 
         return sum;
+    }
+
+    public void setFieldChecker(int i){
+        this.fieldChecker[i] = 1;
+    }
+
+    public int getFieldCheck(int i){
+
+
+        return fieldChecker[i];
+
     }
 
 
