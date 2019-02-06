@@ -222,6 +222,15 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    public void playerOneClicked(View view){
+        Toast.makeText(this, playerOneCreated.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void playerTwoClicked(View view){
+        Toast.makeText(this, playerTwoCreated.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+
 
     public void scoreboardClicked(View view){
 
@@ -749,11 +758,11 @@ public class MainActivity extends AppCompatActivity  {
     }
 
         if(playerTurnIndicator == 1 && toastRuler != 1){
-            Toast.makeText(this, "Player Ones Turn!.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerOneCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
         }
 
         if (playerTurnIndicator == 2 && toastRuler != 1){
-            Toast.makeText(this, "Player Twos Turn!.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerTwoCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
         }
 
         TextView sumFieldPlayerOne = findViewById(R.id.sumOne);
