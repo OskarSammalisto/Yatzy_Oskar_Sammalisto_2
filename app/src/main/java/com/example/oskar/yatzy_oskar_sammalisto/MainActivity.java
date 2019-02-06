@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity  {
     private int throwCounter = 0;
     private int playerTurnIndicator = 1;
     private int roundCounter = 0;
-    private static String playerOne;
-    private static String playerTwo;
+    public static String playerOne;
+    public static String playerTwo;
 
 
 
@@ -50,9 +50,14 @@ public class MainActivity extends AppCompatActivity  {
         //creates player one and two and applies user names and avatars
 //        Human_Player playerOneCreated = new Human_Player(playerOne);
 //        Human_Player playerTwoCreated = new Human_Player(playerTwo);
+
+        Intent intent = getIntent();
                                                                              //not getting the names
-        playerOne = getIntent().getStringExtra("playerOne");
-        playerTwo = getIntent().getStringExtra("playerTwo");
+//        playerOne = getIntent().getStringExtra("playerOne");
+//        playerTwo = getIntent().getStringExtra("playerTwo");
+
+        playerOne = intent.getExtras().getString("playerOne");
+        playerTwo = intent.getExtras().getString("playerTwo");
 
         //set avatar for players
         TypedArray avatarArray = getResources().obtainTypedArray(R.array.avatarArray);
@@ -81,6 +86,8 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+
+
 //        public void createPlayers(){
 //
 //        playerOne = getIntent().getStringExtra("playerOne");
@@ -92,7 +99,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-    Human_Player playerOneCreated = new Human_Player(playerOne);  //take away avatar or change how its set
+    Human_Player playerOneCreated = new Human_Player(playerOne);  //always null
     Human_Player playerTwoCreated = new Human_Player(playerTwo);
 
 
@@ -115,6 +122,8 @@ public class MainActivity extends AppCompatActivity  {
                 .setNegativeButton(getString(R.string.no), null)
                 .show();
     }
+
+
 
 
 
@@ -264,7 +273,7 @@ public class MainActivity extends AppCompatActivity  {
                 break;
             case R.id.twos:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(1) != 1) {
 
                     playerOneCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
                     playerOneCreated.setFieldChecker(1);
@@ -278,7 +287,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(1) != 1) {
                     playerTwoCreated.setScoreArray(1, YatzyScoring.twos(throwArray));
                     playerTwoCreated.setFieldChecker(1);
 
@@ -290,10 +299,16 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
 
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
+
+
                 break;
             case R.id.threes:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(2) != 1) {
 
                     playerOneCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
                     playerOneCreated.setFieldChecker(2);
@@ -307,7 +322,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(2) != 1){
                     playerTwoCreated.setScoreArray(2, YatzyScoring.threes(throwArray));
                     playerTwoCreated.setFieldChecker(2);
 
@@ -319,10 +334,15 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
 
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
+
                 break;
             case R.id.fours:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(3) != 1 ) {
 
                     playerOneCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
                     playerOneCreated.setFieldChecker(3);
@@ -336,7 +356,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(3) != 1){
                     playerTwoCreated.setScoreArray(3, YatzyScoring.fours(throwArray));
                     playerTwoCreated.setFieldChecker(3);
 
@@ -347,11 +367,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.fives:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(4) != 1) {
 
                     playerOneCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
                     playerOneCreated.setFieldChecker(4);
@@ -365,7 +389,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(4) != 1){
                     playerTwoCreated.setScoreArray(4, YatzyScoring.fives(throwArray));
                     playerTwoCreated.setFieldChecker(4);
 
@@ -376,12 +400,16 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
 
                 break;
             case R.id.sixes:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(5) != 1) {
 
                     playerOneCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
                     playerOneCreated.setFieldChecker(5);
@@ -395,7 +423,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(5) != 1){
                     playerTwoCreated.setScoreArray(5, YatzyScoring.sixes(throwArray));
                     playerTwoCreated.setFieldChecker(5);
 
@@ -406,11 +434,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.pair:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(7) != 1) {
 
                     playerOneCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
                     playerOneCreated.setFieldChecker(7);
@@ -424,7 +456,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(7) != 1){
                     playerTwoCreated.setScoreArray(7, YatzyScoring.pair(throwArray));
                     playerTwoCreated.setFieldChecker(7);
 
@@ -435,11 +467,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.two_pairs:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(8) != 1) {
 
                     playerOneCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
                     playerOneCreated.setFieldChecker(8);
@@ -453,7 +489,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(8) != 1){
                     playerTwoCreated.setScoreArray(8, YatzyScoring.twoPairs(throwArray));
                     playerTwoCreated.setFieldChecker(8);
 
@@ -464,11 +500,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.three_of_a_kind:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(9) != 1) {
 
                     playerOneCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
                     playerOneCreated.setFieldChecker(9);
@@ -482,7 +522,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(9) != 1){
                     playerTwoCreated.setScoreArray(9, YatzyScoring.threeOfaKind(throwArray));
                     playerTwoCreated.setFieldChecker(9);
 
@@ -493,11 +533,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.quads:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(10) != 1) {
 
                     playerOneCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
                     playerOneCreated.setFieldChecker(10);
@@ -511,7 +555,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(10) != 1){
                     playerTwoCreated.setScoreArray(10, YatzyScoring.quads(throwArray));
                     playerTwoCreated.setFieldChecker(10);
 
@@ -522,11 +566,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.small_straight:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(11) != 1) {
 
                     playerOneCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
                     playerOneCreated.setFieldChecker(11);
@@ -540,7 +588,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(11) != 1){
                     playerTwoCreated.setScoreArray(11, YatzyScoring.smallStraight(throwArray));
                     playerTwoCreated.setFieldChecker(11);
 
@@ -551,11 +599,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.big_straight:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(12) != 1) {
 
                     playerOneCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
                     playerOneCreated.setFieldChecker(12);
@@ -569,7 +621,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(12) != 1){
                     playerTwoCreated.setScoreArray(12, YatzyScoring.bigStraight(throwArray));
                     playerTwoCreated.setFieldChecker(12);
 
@@ -580,11 +632,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.full_house:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(13) != 1) {
 
                     playerOneCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
                     playerOneCreated.setFieldChecker(13);
@@ -598,7 +654,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(13) != 1){
                     playerTwoCreated.setScoreArray(13, YatzyScoring.fullHouse(throwArray));
                     playerTwoCreated.setFieldChecker(13);
 
@@ -609,11 +665,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.chance:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(14) != 1) {
 
                     playerOneCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
                     playerOneCreated.setFieldChecker(14);
@@ -627,7 +687,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(14) != 1){
                     playerTwoCreated.setScoreArray(14, YatzyScoring.chance(throwArray));
                     playerTwoCreated.setFieldChecker(14);
 
@@ -638,11 +698,15 @@ public class MainActivity extends AppCompatActivity  {
                     playerTurnIndicator = 1;
                     throwCounter = 0;
                 }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
+                }
 
                 break;
             case R.id.yatzy:
 
-                if (playerTurnIndicator == 1) {
+                if (playerTurnIndicator == 1 && playerOneCreated.getFieldCheck(15) != 1) {
 
                     playerOneCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
                     playerOneCreated.setFieldChecker(15);
@@ -656,7 +720,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                } else {
+                } else if(playerTurnIndicator == 2 && playerTwoCreated.getFieldCheck(15) != 1){
                     playerTwoCreated.setScoreArray(15, YatzyScoring.yatzy(throwArray));
                     playerTwoCreated.setFieldChecker(15);
 
@@ -666,6 +730,10 @@ public class MainActivity extends AppCompatActivity  {
                     roundCounter++;
                     playerTurnIndicator = 1;
                     throwCounter = 0;
+                }
+                else {
+                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    toastRuler = 1;
                 }
 
                 break;
@@ -682,6 +750,30 @@ public class MainActivity extends AppCompatActivity  {
             Toast.makeText(this, "Player Twos Turn!.", Toast.LENGTH_SHORT).show();
         }
 
+        TextView sumFieldPlayerOne = findViewById(R.id.sumOne);
+        int bonusSumPlayerOne = playerOneCreated.getBonusSum();
+        sumFieldPlayerOne.setText(Integer.toString(bonusSumPlayerOne));
+
+        TextView sumFieldPlayerTwo = findViewById(R.id.sumTwo);
+        int bonusSumPlayerTwo = playerTwoCreated.getBonusSum();
+        sumFieldPlayerTwo.setText(Integer.toString(bonusSumPlayerTwo));
+
+        if(bonusSumPlayerOne >= 63){
+            playerOneCreated.setScoreArray(6, 50);
+            TextView textView = findViewById(R.id.bonusOne);
+            textView.setText(Integer.toString(playerOneCreated.getScoreArray()[6]));
+        }
+
+        if(bonusSumPlayerTwo >= 63){
+            playerTwoCreated.setScoreArray(6, 50);
+            TextView textView = findViewById(R.id.bonusTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[6]));
+        }
+
+
+
+
+
 
                                                                                 //always returns zero
         TextView textView = findViewById(R.id.totalOne);
@@ -694,6 +786,119 @@ public class MainActivity extends AppCompatActivity  {
 
 
         toastRuler = 0;
+
+        if (roundCounter >= 30){
+//            endGame();
+
+            if (sumPlayerOne > sumPlayerTwo){
+
+                new AlertDialog.Builder(this)
+                        .setMessage("Congratulations: " +playerOneCreated.getName() + ", you win! Press the button to go back to the menu." )
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                MainActivity.this.finish();
+                            }
+                        })
+
+                        .show();
+
+
+            }
+
+            if (sumPlayerTwo > sumPlayerOne){
+
+                new AlertDialog.Builder(this)
+                        .setMessage("Congratulations: " +playerTwoCreated.getName() + ", you win! Press the button to go back to the menu." )
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                MainActivity.this.finish();
+                            }
+                        })
+
+                        .show();
+
+
+            }
+
+             if (sumPlayerOne == sumPlayerTwo){
+
+                new AlertDialog.Builder(this)
+                        .setMessage("the game is a draw! Press the button to go back to the menu." )
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                MainActivity.this.finish();
+                            }
+                        })
+
+                        .show();
+
+
+
+            }
+        }
+
+    }
+
+    public void endGame(){
+
+        int playerOneScore = playerOneCreated.getScoreArraySum();
+        int playerTwoScore = playerTwoCreated.getScoreArraySum();
+
+        if (playerOneScore > playerTwoScore){
+
+            new AlertDialog.Builder(this)
+                    .setMessage("Congratulations: " +playerOneCreated.getName() + ", you win! Press the button to go back to the menu." )
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.this.finish();
+                        }
+                    })
+
+                    .show();
+
+
+        }
+
+        if (playerTwoScore > playerOneScore){
+
+            new AlertDialog.Builder(this)
+                    .setMessage("Congratulations: " +playerTwoCreated.getName() + ", you win! Press the button to go back to the menu." )
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.this.finish();
+                        }
+                    })
+
+                    .show();
+
+
+        }
+
+        else{
+
+            new AlertDialog.Builder(this)
+                    .setMessage("the game is a draw! Press the button to go back to the menu." )
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.this.finish();
+                        }
+                    })
+
+                    .show();
+
+
+
+        }
+
+
+
+
 
     }
 

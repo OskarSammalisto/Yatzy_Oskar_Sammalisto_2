@@ -20,8 +20,8 @@ public class StartScreen extends AppCompatActivity {
 //    final String MyPREFERENCES = "MyPREFERENCES";
 //    final String NAME_KEY = "namekey";
 
-    EditText playerOne;
-    EditText playerTwo;
+//    EditText playerOne;
+//    EditText playerTwo;
 
 //    SharedPreferences sharedPref;
     @Override
@@ -48,8 +48,8 @@ public class StartScreen extends AppCompatActivity {
 
         //saves names from EditText and sends them to MainActivity. Also starts MainActivity unless either name is empty.
 
-        playerOne = findViewById(R.id.playerOne);
-        playerTwo = findViewById(R.id.playerTwo);
+        EditText playerOne = findViewById(R.id.playerOne);
+        EditText playerTwo = findViewById(R.id.playerTwo);
 
        // sharedPref = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 

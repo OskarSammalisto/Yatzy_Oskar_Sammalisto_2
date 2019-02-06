@@ -58,6 +58,16 @@ public class Human_Player {
         return sum;
     }
 
+    public int getBonusSum(){
+        int sum = 0;
+        for(int i = 0; i < 6; i++){
+            sum += scoreArray[i];
+        }
+
+        return sum;
+
+    }
+
     public void setFieldChecker(int i){
         this.fieldChecker[i] = 1;
     }
