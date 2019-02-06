@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity  {
     private int roundCounter = 0;
     public static String playerOne;
     public static String playerTwo;
+    private Human_Player playerOneCreated;
+    private Human_Player playerTwoCreated;
+
 
 
 
@@ -59,6 +62,9 @@ public class MainActivity extends AppCompatActivity  {
         playerOne = intent.getExtras().getString("playerOne");
         playerTwo = intent.getExtras().getString("playerTwo");
 
+        playerOneCreated = new Human_Player(playerOne);
+        playerTwoCreated = new Human_Player(playerTwo);
+
         //set avatar for players
         TypedArray avatarArray = getResources().obtainTypedArray(R.array.avatarArray);
         ImageView imageViewPlayerOne = (ImageView) findViewById(R.id.avatarOne);
@@ -72,7 +78,7 @@ public class MainActivity extends AppCompatActivity  {
 //        getPlayerNames();
 //        createPlayers();
 
-
+        Log.i("qwerty", playerOne);
 
 
 
@@ -99,8 +105,8 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-    Human_Player playerOneCreated = new Human_Player(playerOne);  //always null
-    Human_Player playerTwoCreated = new Human_Player(playerTwo);
+//    Human_Player playerOneCreated = new Human_Player(playerOne);  //always null
+//    Human_Player playerTwoCreated = new Human_Player(playerTwo);
 
 
 
@@ -793,7 +799,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerOne > sumPlayerTwo){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations: " +playerOneCreated.getName() + ", you win! Press the button to go back to the menu." )
+                        .setMessage("Congratulations " +playerOneCreated.getName() + ", you win! Press ok to go back to the menu." )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -809,7 +815,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerTwo > sumPlayerOne){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations: " +playerTwoCreated.getName() + ", you win! Press the button to go back to the menu." )
+                        .setMessage("Congratulations " +playerTwoCreated.getName() + ", you win! Press ok to go back to the menu." )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -825,7 +831,7 @@ public class MainActivity extends AppCompatActivity  {
              if (sumPlayerOne == sumPlayerTwo){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("the game is a draw! Press the button to go back to the menu." )
+                        .setMessage("The game is a draw! Press ok to go back to the menu." )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
