@@ -50,9 +50,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+
         android:ems="10"
         android:hint="@string/playerOne"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +73,7 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/playerTwo"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,28 +125,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" >
 
-    <RadioButton
-        android:id="@+id/singlePlayer"
-        android:checked="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="checkButton"
-        android:text="@string/solo"
-        app:layout_constraintBottom_toTopOf="@+id/playerOne"
-        app:layout_constraintEnd_toStartOf="@+id/twoPlayer"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <!--<RadioButton-->
+        <!--android:id="@+id/singlePlayer"-->
+        <!--android:checked="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="checkButton"-->
+        <!--android:text="@string/solo"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/playerOne"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/twoPlayer"-->
+        <!--app:layout_constraintHorizontal_bias="0.82"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
 
     <RadioButton
         android:id="@+id/twoPlayer"
-        android:checked="false"
+        android:checked="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
