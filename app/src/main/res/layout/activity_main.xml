@@ -1503,6 +1503,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toggleButtonDiceFour" />
 
     <ImageView
+
         android:id="@+id/avatarOne"
         android:layout_width="40dp"
         android:layout_height="40dp"

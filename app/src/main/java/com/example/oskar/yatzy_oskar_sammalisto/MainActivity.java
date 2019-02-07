@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,7 +82,9 @@ public class MainActivity extends AppCompatActivity  {
 
         Log.i("qwerty", playerOne);
 
-
+        ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
+        Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+        imageView.startAnimation(pulse);
 
         // Test code to see that string from start screen is saved
         // TextView textView = (TextView) findViewById(R.id.testString);
@@ -759,10 +763,29 @@ public class MainActivity extends AppCompatActivity  {
 
         if(playerTurnIndicator == 1 && toastRuler != 1){
             Toast.makeText(this, playerOneCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
+
+            ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
+            Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageView.startAnimation(pulse);
+
+            ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarTwo);
+//            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageViewTwo.clearAnimation();
+
+
         }
 
         if (playerTurnIndicator == 2 && toastRuler != 1){
             Toast.makeText(this, playerTwoCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
+
+            ImageView imageView = (ImageView) findViewById(R.id.avatarTwo);
+            Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageView.startAnimation(pulse);
+
+            ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarOne);
+//            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageViewTwo.clearAnimation();
+
         }
 
         TextView sumFieldPlayerOne = findViewById(R.id.sumOne);

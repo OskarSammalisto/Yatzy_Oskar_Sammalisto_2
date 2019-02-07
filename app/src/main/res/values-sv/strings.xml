@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yatzy_Oskar_Sammalisto</string>
+    <string name="ones">Ettor</string>
+    <string name="twos">Tvåor</string>
+    <string name="threes">Treor</string>
+    <string name="fours">Firor</string>
+    <string name="fives">Femmor</string>
+    <string name="sixes">Sexor</string>
+    <string name="sum">Summa</string>
+    <string name="bonus">Bonus</string>
+    <string name="pair">1 Par</string>
+    <string name="two_pairs">2 Par</string>
+    <string name="three_of_a_kind">Triss</string>
+    <string name="quads">Fyrtal</string>
+    <string name="small_straight">1–5</string>
+    <string name="big_straight">2–6</string>
+    <string name="full_house">Kåk</string>
+    <string name="chance">Chans</string>
+    <string name="yatzy">Yatzy</string>
+    <string name="total">Total</string>
+    <string name="startButton">Spela</string>
+    <string name="playerOne">Player One</string>
+    <string name="playerTwo">Player Two</string>
+    <string name="solo">Solo</string>
+    <string name="twoPlayer">2 Spelare</string>
+    <string name="vsAi">VS AI</string>
+    <string name="backWarning">Vill du gå tillbaka till menyn?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string-array name="avatars">
+        <item>Bill</item>
+        <item>Chris</item>
+        <item>Deven</item>
+        <item>Jeremy</item>
+        <item>John</item>
+        <item>Jonathan</item>
+        <item>Puma</item>
+        <item>Rebecca</item>
+        <item>Russel</item>
+        <item>Susan</item>
+    </string-array>
+</resources>
