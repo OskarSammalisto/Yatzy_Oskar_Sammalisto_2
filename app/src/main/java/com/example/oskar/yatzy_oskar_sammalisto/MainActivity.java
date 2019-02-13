@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.Collections;
+
 public class MainActivity extends AppCompatActivity  {
 
 
@@ -31,7 +33,11 @@ public class MainActivity extends AppCompatActivity  {
     public static String playerOne;
     public static String playerTwo;
     private Human_Player playerOneCreated;
-    private Human_Player playerTwoCreated;
+    Human_Player playerTwoCreated;
+    public static  int gameMode;
+    private int [] aiArray = new int[15];
+    private int aiRandomPlay = 0;
+
 
 
 
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         //takes in user names and avatar numbers from StartScreen activity
@@ -86,15 +93,55 @@ public class MainActivity extends AppCompatActivity  {
         Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
         imageView.startAnimation(pulse);
 
+        //reads game mode. 2p or vsAi , 0 = vs ai, 1 = 2 player
+        gameMode = getIntent().getIntExtra("game_mode", 1);
+
         // Test code to see that string from start screen is saved
         // TextView textView = (TextView) findViewById(R.id.testString);
         // textView.setText(playerOneCreated.getName());
 
         // testing avatar spinner int
         // textView.setText(String.valueOf(playerOneAvatar));
+        fillAiArray();
+
+    }
+
+
+    //fills ai array with 1 to 15 in random order (hopefully)
+    public void fillAiArray(){
+
+
+        int i = 0;
+        while (i < 15){
+
+            int random = (int) (Math.random() *15) +1;
+
+            boolean notSame = true;
+
+            for (int j = 0; j < aiArray.length; j++){
+                if(aiArray[j] == random){
+                    notSame = false;
+                }
+            }
+
+            if (notSame){
+                aiArray[i] = random;
+                i++;
+            }
+
+
+
+        }
 
 
     }
+
+
+
+
+    //reads game mode. 2p or vsAi , 0 = vs ai, 1 = 2 player
+//     gameMode = getIntent().getIntExtra("game_mode", 1);
+
 
 
 
@@ -170,7 +217,7 @@ public class MainActivity extends AppCompatActivity  {
        // int[] throwArray = DiceRoller.diceRoller();
 
 
-            //untoggle buttons at start of round
+            //un-toggle buttons at start of round
             if(throwCounter == 0){
 
                 buttonOne.setChecked(false);
@@ -268,6 +315,7 @@ public class MainActivity extends AppCompatActivity  {
 //                 TextView textView = findViewById(R.id.testString);
 //                String name = playerOneCreated.getName();
 //                 textView.setText(name);
+
 
                 }
 
@@ -760,6 +808,35 @@ public class MainActivity extends AppCompatActivity  {
 
         }
     }
+        //ai turn
+        if(gameMode == 0 && playerTurnIndicator == 2){
+
+//            playerTwoCreated.setScoreArray(15, 50);
+//            playerTwoCreated.setFieldChecker(15);
+//
+//            TextView textView = findViewById(R.id.yatzyTwo);
+//            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[15]));
+
+
+
+
+            aiTurn();
+
+
+
+            roundCounter++;
+            playerTurnIndicator = 1;
+            throwCounter = 0;
+
+
+
+        }
+
+
+
+
+
+
 
         if(playerTurnIndicator == 1 && toastRuler != 1){
             Toast.makeText(this, playerOneCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
@@ -813,7 +890,9 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-                                                                                //always returns zero
+
+
+
         TextView textView = findViewById(R.id.totalOne);
         int sumPlayerOne = playerOneCreated.getScoreArraySum();
         textView.setText(Integer.toString(sumPlayerOne));
@@ -940,7 +1019,165 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    public void aiTurn(){
 
+        if(aiArray[aiRandomPlay] == 1){
+
+            playerTwoCreated.setScoreArray(0, AiThrowScores.ones());
+            playerTwoCreated.setFieldChecker(0);
+
+            TextView textView = findViewById(R.id.onesTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[0]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 2){
+
+            playerTwoCreated.setScoreArray(1, AiThrowScores.twos());
+            playerTwoCreated.setFieldChecker(1);
+
+            TextView textView = findViewById(R.id.twosTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[1]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 3){
+
+            playerTwoCreated.setScoreArray(2, AiThrowScores.threes());
+            playerTwoCreated.setFieldChecker(2);
+
+            TextView textView = findViewById(R.id.threesTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[2]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 4){
+
+            playerTwoCreated.setScoreArray(3, AiThrowScores.fours());
+            playerTwoCreated.setFieldChecker(3);
+
+            TextView textView = findViewById(R.id.foursTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[3]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 5){
+
+            playerTwoCreated.setScoreArray(4, AiThrowScores.fives());
+            playerTwoCreated.setFieldChecker(4);
+
+            TextView textView = findViewById(R.id.fivesTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[4]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 6){
+
+            playerTwoCreated.setScoreArray(5, AiThrowScores.sixes());
+            playerTwoCreated.setFieldChecker(5);
+
+            TextView textView = findViewById(R.id.sixesTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[5]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 7){
+
+            playerTwoCreated.setScoreArray(7, AiThrowScores.pair());
+            playerTwoCreated.setFieldChecker(7);
+
+            TextView textView = findViewById(R.id.pairTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[7]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 8){
+
+            playerTwoCreated.setScoreArray(8, AiThrowScores.twoPair());
+            playerTwoCreated.setFieldChecker(8);
+
+            TextView textView = findViewById(R.id.twoPairTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[8]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 9){
+
+            playerTwoCreated.setScoreArray(9, AiThrowScores.threeOfAKind());
+            playerTwoCreated.setFieldChecker(9);
+
+            TextView textView = findViewById(R.id.threeOfTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[9]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 10){
+
+            playerTwoCreated.setScoreArray(10, AiThrowScores.quads());
+            playerTwoCreated.setFieldChecker(10);
+
+            TextView textView = findViewById(R.id.quadsTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[10]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 11){
+
+            playerTwoCreated.setScoreArray(11, AiThrowScores.smallStraight());
+            playerTwoCreated.setFieldChecker(11);
+
+            TextView textView = findViewById(R.id.smallStTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[11]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 12){
+
+            playerTwoCreated.setScoreArray(12, AiThrowScores.bigStraight());
+            playerTwoCreated.setFieldChecker(12);
+
+            TextView textView = findViewById(R.id.largeStTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[12]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 13){
+
+            playerTwoCreated.setScoreArray(13, AiThrowScores.fullHouse());
+            playerTwoCreated.setFieldChecker(13);
+
+            TextView textView = findViewById(R.id.fullHouseTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[13]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 14){
+
+            playerTwoCreated.setScoreArray(14, AiThrowScores.chance());
+            playerTwoCreated.setFieldChecker(14);
+
+            TextView textView = findViewById(R.id.chanceTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[14]));
+
+        }
+
+        if(aiArray[aiRandomPlay] == 15){
+
+            playerTwoCreated.setScoreArray(15, AiThrowScores.yatzy());
+            playerTwoCreated.setFieldChecker(15);
+
+            TextView textView = findViewById(R.id.yatzyTwo);
+            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[15]));
+
+        }
+
+
+
+
+
+
+        aiRandomPlay ++;
+    }
 
 
 

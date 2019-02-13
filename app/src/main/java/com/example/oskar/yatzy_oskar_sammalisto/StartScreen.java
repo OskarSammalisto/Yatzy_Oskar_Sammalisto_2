@@ -57,12 +57,23 @@ public class StartScreen extends AppCompatActivity {
         String playerTwoName = playerTwo.getText().toString();//sharedPref.getString(NAME_KEY, null);
 
 
+        //reads player name and sends to MainActivity
 
         Spinner spinnerPlayerOne = (Spinner) findViewById(R.id.avatarPlayerOne);
         Spinner spinnerPlayerTwo = (Spinner) findViewById(R.id.avatarPlayerTwo);
 
         int playerOneAvatarNumber = spinnerPlayerOne.getSelectedItemPosition();
         int playerTwoAvatarNumber = spinnerPlayerTwo.getSelectedItemPosition();
+
+
+        //reads game mode. 2p or vsAi , 0 = vs ai, 1 = 2 player
+
+        RadioButton playerMode = findViewById(R.id.twoPlayer);
+        int gameMode = 0;
+
+        if(playerMode.isChecked()){
+            gameMode = 1;
+        }
 
 
 //        if (playerOneName != null )
@@ -81,6 +92,7 @@ public class StartScreen extends AppCompatActivity {
         startGame.putExtra("playerTwo", playerTwoName);
         startGame.putExtra("avatar_player_one", playerOneAvatarNumber);
         startGame.putExtra("avatar_player_two", playerTwoAvatarNumber);
+        startGame.putExtra("game_mode", gameMode);
 
         startActivity(startGame);
        }

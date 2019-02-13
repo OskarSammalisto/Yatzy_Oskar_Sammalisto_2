@@ -140,7 +140,7 @@ public class YatzyScoring {
 
         return 0;
     }
-
+                                                    //full house is wrong, returns top three, plus top two. 6+6+6+5+5 returns 3*6 + 2*6!!!!!
     public static int fullHouse(int[] throwArray){
 
         if(pair(throwArray) > 0 && threeOfaKind(throwArray) > 0){
