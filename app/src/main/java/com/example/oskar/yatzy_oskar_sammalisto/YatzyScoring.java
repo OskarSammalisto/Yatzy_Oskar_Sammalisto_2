@@ -142,10 +142,26 @@ public class YatzyScoring {
     }
                                                     //full house is wrong, returns top three, plus top two. 6+6+6+5+5 returns 3*6 + 2*6!!!!!
     public static int fullHouse(int[] throwArray){
+        Arrays.sort(throwArray);
+        int[] firstTwo = {throwArray[0], throwArray[1]};
+        int[] lastThree = {throwArray[2], throwArray[3], throwArray[4]};
+        int[] firstThree = {throwArray[0], throwArray[1], throwArray[2]};
+        int[] lastTwo = {throwArray[3], throwArray[4]};
 
-        if(pair(throwArray) > 0 && threeOfaKind(throwArray) > 0){
-            return pair(throwArray) + threeOfaKind(throwArray);
+
+//        if(pair(throwArray) > 0 && threeOfaKind(throwArray) > 0){
+//            return pair(throwArray) + threeOfaKind(throwArray);
+//        }
+
+        if(pair(firstTwo) > 0 && threeOfaKind(lastThree) > 0){
+            return pair(firstTwo) + threeOfaKind(lastThree);
         }
+
+        if(pair(lastTwo) > 0 && threeOfaKind(firstThree) > 0){
+            return pair(lastTwo) + threeOfaKind(firstThree);
+        }
+
+        
         return 0;
     }
 
