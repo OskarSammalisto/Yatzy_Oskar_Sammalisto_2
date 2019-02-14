@@ -161,7 +161,7 @@ public class YatzyScoring {
             return pair(lastTwo) + threeOfaKind(firstThree);
         }
 
-        
+
         return 0;
     }
 

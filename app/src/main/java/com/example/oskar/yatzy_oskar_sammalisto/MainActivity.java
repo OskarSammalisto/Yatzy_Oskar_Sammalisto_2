@@ -3,6 +3,7 @@ package com.example.oskar.yatzy_oskar_sammalisto;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,8 +38,13 @@ public class MainActivity extends AppCompatActivity  {
     public static  int gameMode;
     private int [] aiArray = new int[15];
     private int aiRandomPlay = 0;
+    MediaPlayer writing;
+    MediaPlayer dice_throw;
 
+    //play sounds in game
 
+//    final MediaPlayer dice_throw = MediaPlayer.create(this, R.raw.trimmed_audio_dices);
+//    final MediaPlayer writing = MediaPlayer.create(this, R.raw.trimmed_writing);
 
 
 
@@ -47,6 +53,11 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        writing = MediaPlayer.create(this, R.raw.trimmed_writing_short);
+        dice_throw = MediaPlayer.create(this, R.raw.trimmed_dices_short);
 
 
 
@@ -105,6 +116,9 @@ public class MainActivity extends AppCompatActivity  {
         fillAiArray();
 
     }
+
+
+
 
 
     //fills ai array with 1 to 15 in random order (hopefully)
@@ -189,11 +203,15 @@ public class MainActivity extends AppCompatActivity  {
 
     public void rollDice(View view){
 
+
+
         if(roundCounter < 30){
 
+//            MediaPlayer dice_throw = MediaPlayer.create(this, R.raw.trimmed_dices_short);
 
 
-
+            dice_throw.start();
+//            dice_throw.release();
 
 
 
@@ -284,6 +302,11 @@ public class MainActivity extends AppCompatActivity  {
 
 
     public void scoreboardClicked(View view){
+
+
+//        MediaPlayer writing = MediaPlayer.create(this, R.raw.trimmed_writing_short);
+        writing.start();
+//        writing.release();
 
         String id = getResources().getResourceName(view.getId());
 
