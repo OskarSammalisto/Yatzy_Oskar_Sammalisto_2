@@ -34,6 +34,7 @@
     <string name="aiName">Yatzy Kungen</string>
     <string name="youWin">, du vinner! Tryck ja för att gå tillbaka till menyn.</string>
     <string name="draw">Spelet är oavgjort! Tryck ja för att gå tillbaka till menyn.</string>
+    <string name="congratulations">Grattis </string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

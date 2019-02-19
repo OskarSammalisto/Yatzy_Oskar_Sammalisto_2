@@ -33,6 +33,7 @@
     <string name="aiName">The Yatzy King</string>
     <string name="youWin">, you win! Press OK to go back to the menu.</string>
     <string name="draw">The game is a draw! Press OK to go back to the menu.</string>
+    <string name="congratulations">Congratulations </string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

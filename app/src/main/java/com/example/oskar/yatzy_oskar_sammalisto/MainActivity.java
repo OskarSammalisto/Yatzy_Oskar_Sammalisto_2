@@ -938,7 +938,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerOne > sumPlayerTwo){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations " +playerOneCreated.getName() +getString(R.string.youWin) )
+                        .setMessage(getString(R.string.congratulations) +playerOneCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -954,7 +954,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerTwo > sumPlayerOne){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations " +playerTwoCreated.getName() +getString(R.string.youWin) )
+                        .setMessage(getString(R.string.congratulations) +playerTwoCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
