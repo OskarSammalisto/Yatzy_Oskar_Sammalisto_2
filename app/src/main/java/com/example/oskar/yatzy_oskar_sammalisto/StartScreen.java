@@ -97,7 +97,7 @@ public class StartScreen extends AppCompatActivity {
         startActivity(startGame);
        }
        else {
-           Toast.makeText(this, "You need to select a name for all players!", Toast.LENGTH_LONG).show();
+           Toast.makeText(this, R.string.fillNameToast, Toast.LENGTH_LONG).show();
        }
     }
 
@@ -105,27 +105,31 @@ public class StartScreen extends AppCompatActivity {
         //is button checked
         boolean checked = ((RadioButton) view).isChecked();
         int menuSelection = radioGroup.getCheckedRadioButtonId();
+        EditText playerTwo = findViewById(R.id.playerTwo);
 
         radioButton = findViewById(menuSelection);
 
         Toast.makeText(this,  radioButton.getText() + " mode selected.", Toast.LENGTH_SHORT).show();
 
-        //see which button is clicked
-//        switch (view.getId()){
-//            case R.id.singlePlayer:
-//                if (checked)
-//
-//
-//                    break;
-//            case R.id.twoPlayer:
-//                if (checked)
-//
-//                    break;
-//            case  R.id.vsAi:
-//                if (checked)
-//
-//                    break;
-//        }
+//        see which button is clicked
+        switch (view.getId()){
+
+            case R.id.twoPlayer:
+                if (checked)
+
+                    playerTwo.setFocusableInTouchMode(true);
+                    playerTwo.setText("");
+
+                    break;
+            case  R.id.vsAi:
+                if (checked)
+
+                    playerTwo.setFocusable(false);
+                    playerTwo.setText(R.string.aiName);
+
+
+                    break;
+        }
     }
 
 }

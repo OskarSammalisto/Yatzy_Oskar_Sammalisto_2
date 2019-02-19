@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity  {
 //        getPlayerNames();
 //        createPlayers();
 
-        Log.i("qwerty", playerOne);
+       // Log.i("qwerty", playerOne);
 
         ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
         Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
@@ -114,6 +114,11 @@ public class MainActivity extends AppCompatActivity  {
         // testing avatar spinner int
         // textView.setText(String.valueOf(playerOneAvatar));
         fillAiArray();
+
+
+        if(gameMode == 0){
+            imageViewPlayerTwo.setImageResource(R.drawable.phone_booth);
+        }
 
     }
 
@@ -355,7 +360,7 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -390,7 +395,7 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -425,7 +430,7 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -458,7 +463,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -491,7 +496,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -525,7 +530,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -558,7 +563,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -591,7 +596,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -624,7 +629,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -657,7 +662,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -690,7 +695,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -723,7 +728,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -756,7 +761,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -789,7 +794,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 
@@ -822,7 +827,7 @@ public class MainActivity extends AppCompatActivity  {
                     throwCounter = 0;
                 }
                 else {
-                    Toast.makeText(this, "This field is already played!.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.fieldAlreadtPlayed, Toast.LENGTH_SHORT).show();
                     toastRuler = 1;
                 }
 

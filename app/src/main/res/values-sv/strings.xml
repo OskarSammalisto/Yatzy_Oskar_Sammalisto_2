@@ -20,14 +20,18 @@
     <string name="yatzy">Yatzy</string>
     <string name="total">Total</string>
     <string name="startButton">Spela</string>
-    <string name="playerOne">Player One</string>
-    <string name="playerTwo">Player Two</string>
+    <string name="playerOne">Första Spelare</string>
+    <string name="playerTwo">Andra Spelare</string>
     <string name="solo">Solo</string>
     <string name="twoPlayer">2 Spelare</string>
     <string name="vsAi">VS AI</string>
     <string name="backWarning">Vill du gå tillbaka till menyn?</string>
     <string name="yes">Ja</string>
     <string name="no">Nej</string>
+    <string name="fillNameToast">Du behöver välja namn för alla spelare!</string>
+    <string name="fieldAlreadtPlayed">Denna ruta har redan spelats!.</string>
+    <string name="turn">s Tur!.</string>
+    <string name="aiName">Yatzy Kungen</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

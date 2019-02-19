@@ -27,6 +27,10 @@
     <string name="backWarning">Do you want to exit to main menu?</string>
     <string name="yes">OK</string>
     <string name="no">No</string>
+    <string name="fillNameToast">You need to select a name for all players!</string>
+    <string name="fieldAlreadtPlayed">This field is already played!.</string>
+    <string name="turn">\'s Turn!.</string>
+    <string name="aiName">The Yatzy King</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>
