@@ -24,7 +24,7 @@
     <string name="playerTwo">Andra Spelare</string>
     <string name="solo">Solo</string>
     <string name="twoPlayer">2 Spelare</string>
-    <string name="vsAi">VS AI</string>
+    <string name="vsAi">VS Mobilen</string>
     <string name="backWarning">Vill du gå tillbaka till menyn?</string>
     <string name="yes">Ja</string>
     <string name="no">Nej</string>
@@ -35,6 +35,7 @@
     <string name="youWin">, du vinner! Tryck ja för att gå tillbaka till menyn.</string>
     <string name="draw">Spelet är oavgjort! Tryck ja för att gå tillbaka till menyn.</string>
     <string name="congratulations">Grattis </string>
+    <string name="mode">mode valt.</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

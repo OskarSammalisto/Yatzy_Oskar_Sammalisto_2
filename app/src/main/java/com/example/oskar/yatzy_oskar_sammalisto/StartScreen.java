@@ -109,7 +109,7 @@ public class StartScreen extends AppCompatActivity {
 
         radioButton = findViewById(menuSelection);
 
-        Toast.makeText(this,  radioButton.getText() + " mode selected.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,  radioButton.getText() +" "  +getString(R.string.mode), Toast.LENGTH_SHORT).show();
 
 //        see which button is clicked
         switch (view.getId()){

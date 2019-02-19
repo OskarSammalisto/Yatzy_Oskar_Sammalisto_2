@@ -23,7 +23,7 @@
     <string name="playerTwo">Player Two</string>
     <string name="solo">Solo</string>
     <string name="twoPlayer">2 Player</string>
-    <string name="vsAi">VS AI</string>
+    <string name="vsAi">VS Phone</string>
     <string name="backWarning">Do you want to exit to main menu?</string>
     <string name="yes">OK</string>
     <string name="no">No</string>
@@ -33,7 +33,8 @@
     <string name="aiName">The Yatzy King</string>
     <string name="youWin">, you win! Press OK to go back to the menu.</string>
     <string name="draw">The game is a draw! Press OK to go back to the menu.</string>
-    <string name="congratulations">Congratulations </string>
+    <string name="congratulations">Congratulations</string>
+    <string name="mode">mode selected.</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

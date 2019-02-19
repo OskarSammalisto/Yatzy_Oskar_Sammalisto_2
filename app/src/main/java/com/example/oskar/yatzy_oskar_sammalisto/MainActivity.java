@@ -938,7 +938,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerOne > sumPlayerTwo){
 
                 new AlertDialog.Builder(this)
-                        .setMessage(getString(R.string.congratulations) +playerOneCreated.getName() +getString(R.string.youWin) )
+                        .setMessage(getString(R.string.congratulations) +" " +playerOneCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -954,7 +954,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerTwo > sumPlayerOne){
 
                 new AlertDialog.Builder(this)
-                        .setMessage(getString(R.string.congratulations) +playerTwoCreated.getName() +getString(R.string.youWin) )
+                        .setMessage(getString(R.string.congratulations) +" " +playerTwoCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -1048,6 +1048,13 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     public void aiTurn(){
+//        try {
+//            Thread.sleep(1000);
+//        }
+//        catch (Exception e){
+//
+//        }
+
 
         if(aiArray[aiRandomPlay] == 1){
 
@@ -1203,7 +1210,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-
+       // writing.start();
         aiRandomPlay ++;
     }
 
