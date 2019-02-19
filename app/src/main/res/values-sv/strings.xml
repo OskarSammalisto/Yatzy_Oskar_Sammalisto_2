@@ -32,6 +32,8 @@
     <string name="fieldAlreadtPlayed">Denna ruta har redan spelats!.</string>
     <string name="turn">s Tur!.</string>
     <string name="aiName">Yatzy Kungen</string>
+    <string name="youWin">, du vinner! Tryck ja för att gå tillbaka till menyn.</string>
+    <string name="draw">Spelet är oavgjort! Tryck ja för att gå tillbaka till menyn.</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>
