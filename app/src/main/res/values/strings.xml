@@ -31,8 +31,8 @@
     <string name="fieldAlreadtPlayed">This field is already played!.</string>
     <string name="turn">\'s Turn!.</string>
     <string name="aiName">The Yatzy King</string>
-    <string name="youWin">, you win! Press ok to go back to the menu.</string>
-    <string name="draw">The game is a draw! Press ok to go back to the menu.</string>
+    <string name="youWin">, you win! Press OK to go back to the menu.</string>
+    <string name="draw">The game is a draw! Press OK to go back to the menu.</string>
     <string-array name="avatars">
         <item>Bill</item>
         <item>Chris</item>

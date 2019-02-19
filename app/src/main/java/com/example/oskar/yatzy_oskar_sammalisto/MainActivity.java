@@ -867,7 +867,7 @@ public class MainActivity extends AppCompatActivity  {
 
 
         if(playerTurnIndicator == 1 && toastRuler != 1){
-            Toast.makeText(this, playerOneCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerOneCreated.getName() +getString(R.string.turn), Toast.LENGTH_SHORT).show();
 
             ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
             Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
@@ -881,7 +881,7 @@ public class MainActivity extends AppCompatActivity  {
         }
 
         if (playerTurnIndicator == 2 && toastRuler != 1){
-            Toast.makeText(this, playerTwoCreated.getName() +"'s Turn!.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerTwoCreated.getName() +getString(R.string.turn), Toast.LENGTH_SHORT).show();
 
             ImageView imageView = (ImageView) findViewById(R.id.avatarTwo);
             Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
@@ -938,7 +938,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerOne > sumPlayerTwo){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations " +playerOneCreated.getName() + R.string.youWin )
+                        .setMessage("Congratulations " +playerOneCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -954,7 +954,7 @@ public class MainActivity extends AppCompatActivity  {
             if (sumPlayerTwo > sumPlayerOne){
 
                 new AlertDialog.Builder(this)
-                        .setMessage("Congratulations " +playerTwoCreated.getName() + R.string.youWin )
+                        .setMessage("Congratulations " +playerTwoCreated.getName() +getString(R.string.youWin) )
                         .setCancelable(false)
                         .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
