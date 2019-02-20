@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,12 +12,16 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+
 import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity  {
     private int aiRandomPlay = 0;
     MediaPlayer writing;
     MediaPlayer dice_throw;
+    ImageButton throwButton;
 
     //play sounds in game
 
@@ -121,6 +127,8 @@ public class MainActivity extends AppCompatActivity  {
         }
 
     }
+
+
 
 
 
@@ -846,9 +854,56 @@ public class MainActivity extends AppCompatActivity  {
 //            textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[15]));
 
 
+//            //doesn't animate ai avatar!
+//            ImageView imageView = (ImageView) findViewById(R.id.avatarTwo);
+//            Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+//            imageView.startAnimation(pulse);
+//
+//            ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarOne);
+////            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
+//            imageViewTwo.clearAnimation();
+
+            throwButton = findViewById(R.id.button);
 
 
-            aiTurn();
+            new CountDownTimer(4500, 1500){
+
+
+
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    // do something after 1s
+                    throwButton.setClickable(false);
+                    dice_throw.start();
+                }
+
+                @Override
+                public void onFinish() {
+                    // do something end times 5s
+
+                    writing.start();
+                    aiTurn();
+                    throwButton.setClickable(true);
+                    TextView sumFieldPlayerTwo = findViewById(R.id.sumTwo);
+                    int bonusSumPlayerTwo = playerTwoCreated.getBonusSum();
+                    sumFieldPlayerTwo.setText(Integer.toString(bonusSumPlayerTwo));
+
+                    if(bonusSumPlayerTwo >= 63){
+                        playerTwoCreated.setScoreArray(6, 50);
+                        TextView textView = findViewById(R.id.bonusTwo);
+                        textView.setText(Integer.toString(playerTwoCreated.getScoreArray()[6]));
+                    }
+
+                    TextView textViewTwo = findViewById(R.id.totalTwo);
+                    int sumPlayerTwo = playerTwoCreated.getScoreArraySum();
+                    textViewTwo.setText(Integer.toString(sumPlayerTwo));
+
+
+                }
+
+            }.start();
+
+//            aiTurn();
 
 
 
@@ -1054,6 +1109,23 @@ public class MainActivity extends AppCompatActivity  {
 //        catch (Exception e){
 //
 //        }
+
+//        //count down timer to delay ai
+//        new CountDownTimer(4500, 1500){
+//
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                // do something after 1s
+//                dice_throw.start();
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                // do something end times 5s
+//                writing.start();
+//            }
+//
+//        }.start();
 
 
         if(aiArray[aiRandomPlay] == 1){
