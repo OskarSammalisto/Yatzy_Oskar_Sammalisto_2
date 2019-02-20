@@ -866,7 +866,7 @@ public class MainActivity extends AppCompatActivity  {
             throwButton = findViewById(R.id.button);
 
 
-            new CountDownTimer(4500, 1500){
+            new CountDownTimer(2500, 1500){
 
 
 
@@ -988,69 +988,83 @@ public class MainActivity extends AppCompatActivity  {
         toastRuler = 0;
 
         if (roundCounter >= 30){
-//            endGame();
-
-            if (sumPlayerOne > sumPlayerTwo){
-
-                new AlertDialog.Builder(this)
-                        .setMessage(getString(R.string.congratulations) +" " +playerOneCreated.getName() +getString(R.string.youWin) )
-                        .setCancelable(false)
-                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                MainActivity.this.finish();
-                            }
-                        })
-
-                        .show();
+//
 
 
-            }
+            new CountDownTimer(3000, 1000) {
 
-            if (sumPlayerTwo > sumPlayerOne){
+                public void onTick(long millisUntilFinished) {
 
-                new AlertDialog.Builder(this)
-                        .setMessage(getString(R.string.congratulations) +" " +playerTwoCreated.getName() +getString(R.string.youWin) )
-                        .setCancelable(false)
-                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                MainActivity.this.finish();
-                            }
-                        })
+                }
 
-                        .show();
-
-
-            }
-
-             if (sumPlayerOne == sumPlayerTwo){
-
-                new AlertDialog.Builder(this)
-                        .setMessage(R.string.draw )
-                        .setCancelable(false)
-                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                MainActivity.this.finish();
-                            }
-                        })
-
-                        .show();
+                public void onFinish() {
+                    endGame();
+                }
+            }.start();
 
 
 
-            }
+//            if (sumPlayerOne > sumPlayerTwo){
+//
+//                new AlertDialog.Builder(this)
+//                        .setMessage(getString(R.string.congratulations) +" " +playerOneCreated.getName() +getString(R.string.youWin) )
+//                        .setCancelable(false)
+//                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//                                MainActivity.this.finish();
+//                            }
+//                        })
+//
+//                        .show();
+//
+//
+//            }
+//
+//            if (sumPlayerTwo > sumPlayerOne){
+//
+//                new AlertDialog.Builder(this)
+//                        .setMessage(getString(R.string.congratulations) +" " +playerTwoCreated.getName() +getString(R.string.youWin) )
+//                        .setCancelable(false)
+//                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//                                MainActivity.this.finish();
+//                            }
+//                        })
+//
+//                        .show();
+//
+//
+//            }
+//
+//             if (sumPlayerOne == sumPlayerTwo){
+//
+//                new AlertDialog.Builder(this)
+//                        .setMessage(R.string.draw )
+//                        .setCancelable(false)
+//                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//                                MainActivity.this.finish();
+//                            }
+//                        })
+//
+//                        .show();
+//
+//
+//
+//            }
         }
 
     }
 
     public void endGame(){
 
-        int playerOneScore = playerOneCreated.getScoreArraySum();
-        int playerTwoScore = playerTwoCreated.getScoreArraySum();
+        int sumPlayerOne = playerOneCreated.getScoreArraySum();
+        int sumPlayerTwo = playerTwoCreated.getScoreArraySum();
 
-        if (playerOneScore > playerTwoScore){
+        if (sumPlayerOne > sumPlayerTwo){
 
             new AlertDialog.Builder(this)
-                    .setMessage("Congratulations: " +playerOneCreated.getName() + ", you win! Press the button to go back to the menu." )
+                    .setMessage(getString(R.string.congratulations) +" " +playerOneCreated.getName() +getString(R.string.youWin) )
                     .setCancelable(false)
                     .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -1063,10 +1077,10 @@ public class MainActivity extends AppCompatActivity  {
 
         }
 
-        if (playerTwoScore > playerOneScore){
+        if (sumPlayerTwo > sumPlayerOne){
 
             new AlertDialog.Builder(this)
-                    .setMessage("Congratulations: " +playerTwoCreated.getName() + ", you win! Press the button to go back to the menu." )
+                    .setMessage(getString(R.string.congratulations) +" " +playerTwoCreated.getName() +getString(R.string.youWin) )
                     .setCancelable(false)
                     .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -1079,10 +1093,10 @@ public class MainActivity extends AppCompatActivity  {
 
         }
 
-        else{
+        if (sumPlayerOne == sumPlayerTwo){
 
             new AlertDialog.Builder(this)
-                    .setMessage("the game is a draw! Press the button to go back to the menu." )
+                    .setMessage(R.string.draw )
                     .setCancelable(false)
                     .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -1095,6 +1109,55 @@ public class MainActivity extends AppCompatActivity  {
 
 
         }
+
+//        if (playerOneScore > playerTwoScore){
+//
+//            new AlertDialog.Builder(this)
+//                    .setMessage("Congratulations: " +playerOneCreated.getName() + ", you win! Press the button to go back to the menu." )
+//                    .setCancelable(false)
+//                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            MainActivity.this.finish();
+//                        }
+//                    })
+//
+//                    .show();
+//
+//
+//        }
+//
+//        if (playerTwoScore > playerOneScore){
+//
+//            new AlertDialog.Builder(this)
+//                    .setMessage("Congratulations: " +playerTwoCreated.getName() + ", you win! Press the button to go back to the menu." )
+//                    .setCancelable(false)
+//                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            MainActivity.this.finish();
+//                        }
+//                    })
+//
+//                    .show();
+//
+//
+//        }
+//
+//        else{
+//
+//            new AlertDialog.Builder(this)
+//                    .setMessage("the game is a draw! Press the button to go back to the menu." )
+//                    .setCancelable(false)
+//                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            MainActivity.this.finish();
+//                        }
+//                    })
+//
+//                    .show();
+//
+//
+//
+//        }
 
 
 
