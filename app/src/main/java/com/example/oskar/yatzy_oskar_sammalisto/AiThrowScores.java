@@ -4,14 +4,14 @@ public class AiThrowScores {
 
 
     public static int ones(){
-        int random = (int) (Math.random() *7);
+        int random = (int) (Math.random() *6) +1;
 
 
         return random;
     }
 
     public static int twos(){
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +2;
 
         random *= 2;
 
@@ -20,7 +20,7 @@ public class AiThrowScores {
 
     public static int threes(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +2;
 
         random *= 3;
 
@@ -31,7 +31,7 @@ public class AiThrowScores {
 
     public static int fours(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +1;
 
         random *= 4;
 
@@ -42,7 +42,7 @@ public class AiThrowScores {
 
     public static int fives(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +1;
 
         random *= 5;
 
@@ -53,7 +53,7 @@ public class AiThrowScores {
 
     public static int sixes(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +1;
 
         random *= 6;
 
@@ -64,7 +64,7 @@ public class AiThrowScores {
 
     public static int pair(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *5) +1;
 
         random *= 2;
 
@@ -77,11 +77,11 @@ public class AiThrowScores {
 
         int random = 0;
 
-        int randomOne = (int) (Math.random() *6);
+        int randomOne = (int) (Math.random() *5) +1;
 
         randomOne *= 2;
 
-        int randomTwo = (int) (Math.random() *6);
+        int randomTwo = (int) (Math.random() *5) +1;
 
         randomTwo *= 2;
 
@@ -97,7 +97,7 @@ public class AiThrowScores {
 
     public static int threeOfAKind(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *7);
 
         random *= 3;
 
@@ -107,7 +107,7 @@ public class AiThrowScores {
     }
 
     public static int quads(){
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *7);
 
         random *= 4;
 
@@ -119,7 +119,7 @@ public class AiThrowScores {
     public static int smallStraight(){
         int random = (int) (Math.random() *6);
 
-        if(random >= 4){
+        if(random >= 3){
             random = 15;
         }
         else {
@@ -154,19 +154,19 @@ public class AiThrowScores {
         }
 
         if(random == 4){
-            fullHouseScore = 23;
+            fullHouseScore = 24;
         }
 
         if(random == 3){
-            fullHouseScore = 18;
+            fullHouseScore = 21;
         }
 
         if(random == 2){
-            fullHouseScore = 13;
+            fullHouseScore = 16;
         }
 
         if(random == 1){
-            fullHouseScore = 8;
+            fullHouseScore = 13;
         }
 
         return fullHouseScore;
@@ -185,10 +185,10 @@ public class AiThrowScores {
 
     public static int yatzy(){
 
-        int random = (int) (Math.random() *6);
+        int random = (int) (Math.random() *8);
         int yatzy = 0;
 
-        if(random >= 4){
+        if(random >= 5){
             yatzy = 50;
         }
 
