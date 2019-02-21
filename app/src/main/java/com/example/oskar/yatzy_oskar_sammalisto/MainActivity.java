@@ -1003,7 +1003,7 @@ public class MainActivity extends AppCompatActivity  {
             }.start();
 
 
-//
+//12
 //            if (sumPlayerOne > sumPlayerTwo){
 //
 //                new AlertDialog.Builder(this)
