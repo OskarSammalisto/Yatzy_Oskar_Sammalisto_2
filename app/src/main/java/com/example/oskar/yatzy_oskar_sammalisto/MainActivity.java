@@ -863,6 +863,17 @@ public class MainActivity extends AppCompatActivity  {
 ////            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
 //            imageViewTwo.clearAnimation();
 
+            Toast.makeText(this, playerTwoCreated.getName() +getString(R.string.turn), Toast.LENGTH_SHORT).show();
+
+            ImageView imageView = (ImageView) findViewById(R.id.avatarTwo);
+            Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageView.startAnimation(pulse);
+
+            ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarOne);
+//            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
+            imageViewTwo.clearAnimation();
+
+
             throwButton = findViewById(R.id.button);
 
 
@@ -872,14 +883,14 @@ public class MainActivity extends AppCompatActivity  {
 
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    // do something after 1s
+
                     throwButton.setClickable(false);
                     dice_throw.start();
                 }
 
                 @Override
                 public void onFinish() {
-                    // do something end times 5s
+                    
 
                     writing.start();
                     aiTurn();
@@ -922,16 +933,35 @@ public class MainActivity extends AppCompatActivity  {
 
 
         if(playerTurnIndicator == 1 && toastRuler != 1){
-            Toast.makeText(this, playerOneCreated.getName() +getString(R.string.turn), Toast.LENGTH_SHORT).show();
 
-            ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
-            Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
-            imageView.startAnimation(pulse);
+            if(gameMode == 0){
 
-            ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarTwo);
+
+                new CountDownTimer(2500, 1000){
+                    public void onTick(long millisUntilFinished){
+
+                    }
+                    public void onFinish(){
+                        animation();
+                    }
+
+
+                }.start();
+
+
+            }
+            else {
+
+                Toast.makeText(this, playerOneCreated.getName() + getString(R.string.turn), Toast.LENGTH_SHORT).show();
+
+                ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
+                Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+                imageView.startAnimation(pulse);
+
+                ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarTwo);
 //            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
-            imageViewTwo.clearAnimation();
-
+                imageViewTwo.clearAnimation();
+            }
 
         }
 
@@ -1054,6 +1084,19 @@ public class MainActivity extends AppCompatActivity  {
 //            }
         }
 
+    }
+
+    public void animation(){
+
+        Toast.makeText(this, playerOneCreated.getName() +getString(R.string.turn), Toast.LENGTH_SHORT).show();
+
+        ImageView imageView = (ImageView) findViewById(R.id.avatarOne);
+        Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+        imageView.startAnimation(pulse);
+
+        ImageView imageViewTwo = (ImageView) findViewById(R.id.avatarTwo);
+//            Animation pulseTwo = AnimationUtils.loadAnimation(this, R.anim.pulse);
+        imageViewTwo.clearAnimation();
     }
 
     public void endGame(){
